@@ -513,7 +513,66 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.text-red-500 {
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 205 247 / var(--tw-bg-opacity));
+}
+
+.left {
+  position: relative;
+}
+
+#toggle {
+  position: absolute;
+  top: 0px;
+  right: 2.5rem;
+}
+
+#produto {
+  height: 253px;
+  width: 449px;
+}
+
+.right .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.right .wrapper .code {
+  font-weight: 300;
   --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity));
+  color: rgb(39 26 69 / var(--tw-text-opacity));
+  font-family: 'Lato', serif;
+}
+
+.right .wrapper .title {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: 'Crimson Pro', serif;
+}
+
+.right .wrapper .price {
+  --tw-text-opacity: 1;
+  color: rgb(39 26 69 / var(--tw-text-opacity));
+  font-family: 'Lato', sans-serif;
+}
+
+.right .btn {
+  margin-top: 1.25rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(39 26 69 / var(--tw-border-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(39 26 69 / var(--tw-text-opacity));
+  font-family: 'Lato', serif;
 }

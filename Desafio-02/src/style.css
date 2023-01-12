@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply flex bg-[#D9CDF7] min-h-screen items-center justify-center;
+}
+
+.left {
+    @apply relative;
+}
+
+#toggle {
+    @apply absolute top-0 right-10;
+}
+
+#produto {
+    @apply w-[449px] h-[253px];
+}
+
+.right .wrapper {
+    @apply flex flex-col gap-3;
+
+}
+
+.right .wrapper .code {
+    @apply text-[#271A45] font-light;
+    font-family: 'Lato', serif;
+}
+
+.right .wrapper .title {
+    @apply font-semibold text-[32px];
+    font-family: 'Crimson Pro', serif;
+}
+
+.right .wrapper .price {
+    @apply text-[#271A45];
+    font-family: 'Lato', sans-serif;
+}
+
+.right .btn {
+    @apply border border-[#271A45] text-[#271A45] rounded-full px-4 py-2 mt-5;
+    font-family: 'Lato', serif;
+}

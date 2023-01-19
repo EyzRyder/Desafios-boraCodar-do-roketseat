@@ -21,18 +21,19 @@
 
 <body>
     <div class="left">
-        <img id="toggle" src="./assets/Vector.svg" alt="360button">
+        <img id="toggle" src="./assets/360.svg" alt="clique neste butão para animar o sofa">
         <img id="produto" src="./assets/sofa.png" alt="sofa">
     </div>
     <div class="right">
         <div class="wrapper">
-            <div class="code">CÓDIGO: 42404
-            </div>
-            <div class="title">
+            <h4 class="code">CÓDIGO: 42404
+            </h4>
+            <h1 class="title">
                 Sofá Margot II - Rosé
-            </div>
-            <div class="price">
-                R$ 4.000</div>
+            </h1>
+            <p class="price">
+                R$ 4.000
+            </p>
         </div>
         <button class="btn">ADICIONAR Á CESTA</button>
     </div>
@@ -44,10 +45,10 @@
         btn.addEventListener("click", () => {
             btn.classList.toggle("active");
             if (btn.classList.contains("active")) {
-                btn.src = "./assets/Vector (Stroke).svg"
+                btn.src = "./assets/Close stroke.svg"
                 produtoImg.src = "./assets/sofa.gif";
             } else {
-                btn.src = "./assets/Vector.svg"
+                btn.src = "./assets/360.svg"
 
                 produtoImg.src = "./assets/sofa.png";
             }

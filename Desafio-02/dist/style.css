@@ -513,19 +513,32 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+}
+
 body {
   display: flex;
   min-height: 100vh;
   align-items: center;
   justify-content: center;
+  gap: 2.25rem;
   --tw-bg-opacity: 1;
   background-color: rgb(217 205 247 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(39 26 69 / var(--tw-text-opacity));
 }
 
 @media not all and (min-width: 768px) {
   body {
     flex-direction: column;
   }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
 }
 
 .left {
@@ -535,12 +548,15 @@ body {
 #toggle {
   position: absolute;
   top: 0px;
-  right: 2.5rem;
+  right: 3rem;
+  cursor: pointer;
 }
 
 #produto {
-  height: 253px;
+  height: 222px;
   width: 449px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .right .wrapper {
@@ -551,9 +567,6 @@ body {
 
 .right .wrapper .code {
   font-weight: 300;
-  --tw-text-opacity: 1;
-  color: rgb(39 26 69 / var(--tw-text-opacity));
-  font-family: 'Lato', serif;
 }
 
 .right .wrapper .title {
@@ -563,9 +576,7 @@ body {
 }
 
 .right .wrapper .price {
-  --tw-text-opacity: 1;
-  color: rgb(39 26 69 / var(--tw-text-opacity));
-  font-family: 'Lato', sans-serif;
+  opacity: 0.67;
 }
 
 .right .btn {
@@ -578,7 +589,4 @@ body {
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(39 26 69 / var(--tw-text-opacity));
-  font-family: 'Lato', serif;
 }

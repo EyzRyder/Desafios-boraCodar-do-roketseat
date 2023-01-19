@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    @apply m-0 p-0 box-border;
+}
+
 body {
-    @apply flex bg-[#D9CDF7] min-h-screen items-center justify-center max-md:flex-col;
+    @apply flex bg-bgColor text-textColor min-h-screen items-center justify-center gap-9 max-md:flex-col;
+    font-family: 'Lato', sans-serif;
 }
 
 .left {
@@ -11,21 +16,19 @@ body {
 }
 
 #toggle {
-    @apply absolute top-0 right-10;
+    @apply absolute top-0 right-12 cursor-pointer;
 }
 
 #produto {
-    @apply w-[449px] h-[253px];
+    @apply w-[449px] h-[222px] object-cover;
 }
 
 .right .wrapper {
     @apply flex flex-col gap-3;
-
 }
 
 .right .wrapper .code {
-    @apply text-[#271A45] font-light;
-    font-family: 'Lato', serif;
+    @apply font-light;
 }
 
 .right .wrapper .title {
@@ -34,11 +37,9 @@ body {
 }
 
 .right .wrapper .price {
-    @apply text-[#271A45];
-    font-family: 'Lato', sans-serif;
+    @apply opacity-[0.67];
 }
 
 .right .btn {
-    @apply border border-[#271A45] text-[#271A45] rounded-full px-4 py-2 mt-5;
-    font-family: 'Lato', serif;
+    @apply border border-textColor rounded-full px-4 py-2 mt-5;
 }

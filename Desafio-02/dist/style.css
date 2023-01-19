@@ -522,6 +522,12 @@ body {
   background-color: rgb(217 205 247 / var(--tw-bg-opacity));
 }
 
+@media not all and (min-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+}
+
 .left {
   position: relative;
 }

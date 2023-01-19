@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply flex bg-[#D9CDF7] min-h-screen items-center justify-center;
+    @apply flex bg-[#D9CDF7] min-h-screen items-center justify-center max-md:flex-col;
 }
 
 .left {

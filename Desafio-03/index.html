@@ -86,14 +86,9 @@
     document.querySelectorAll('.box').forEach(item => {
         item.addEventListener('dragover', (e) => {
             e.preventDefault();
-            // e.currentTarget.classList.add('hover');
         });
-        // item.addEventListener('dragleave', (e) => {
-        //     e.currentTarget.classList.remove('hover');
 
-        // });
         item.addEventListener('drop', (e) => {
-            // e.currentTarget.classList.remove('hover');
 
             let box = document.getElementById(e.dataTransfer.getData("box"));
             let btn = document.getElementById(e.dataTransfer.getData("button"));

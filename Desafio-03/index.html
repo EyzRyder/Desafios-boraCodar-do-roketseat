@@ -22,13 +22,13 @@
         </div>
 
         <div id="box2" class="box">
-            <button id="secondary"disabled draggable="true" class=" bg-secondary-default hover:bg-secondary-light btn">
+            <button id="secondary" disabled draggable="false" class=" bg-secondary-default hover:bg-secondary-light btn">
                 INTERAJA COMIGO
             </button>
         </div>
 
         <div id="box3" class="box">
-            <button id="tertiary" draggable="true" class="btn loader">
+            <button id="tertiary" draggable="false" class="btn loader">
                 <i class="fa fa-circle-o-notch fa-spin"></i> LOADING
             </button>
         </div>
@@ -37,7 +37,40 @@
 </body>
 
 <script>
-    
+    document.querySelectorAll('.btn').forEach(item => {
+        item.addEventListener('dragstart', (e) => {
+            e.currentTarget.classList.add('dragging');
+            e.dataTransfer.setData("box", e.target.parentElement.id);
+            e.dataTransfer.setData("button", e.target.id);
+        });
+
+        item.addEventListener('dragend', (e) => {
+            e.currentTarget.classList.remove('dragging');
+        });
+    });
+
+    document.querySelectorAll('.box').forEach(item => {
+        item.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            // e.currentTarget.classList.add('hover');
+        });
+        // item.addEventListener('dragleave', (e) => {
+        //     e.currentTarget.classList.remove('hover');
+
+        // });
+        item.addEventListener('drop', (e) => {
+            // e.currentTarget.classList.remove('hover');
+
+            let box = document.getElementById(e.dataTransfer.getData("box"));
+            let btn = document.getElementById(e.dataTransfer.getData("button"));
+            box.appendChild(e.currentTarget.firstElementChild);
+            e.currentTarget.appendChild(btn);
+        });
+    });
+
+
+
+
 </script>
 
 </html>

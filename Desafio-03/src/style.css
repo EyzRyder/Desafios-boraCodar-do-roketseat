@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    @apply m-0 p-0 box-border;
+}
+
+body {
+    @apply min-h-screen bg-[#130F1E] text-white;
+}
+
+#app {
+    @apply flex flex-col gap-8 p-11;
+}
+
+.box {
+    @apply w-full flex items-center justify-center;
+}
+
+.btn {
+    @apply w-full p-3 rounded-3xl hover:cursor-pointer disabled:opacity-[0.56] focus:border-2 focus:border-[#D9CDF7] focus:border-solid disabled:cursor-not-allowed flex justify-center items-center gap-2;
+}
+
+.loader {
+    @apply hover:cursor-progress;
+
+}
+
+.movable {
+    @apply  hover:cursor-move;
+}
+
+img{
+    @apply w-6 h-6;
+}

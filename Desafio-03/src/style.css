@@ -11,7 +11,7 @@ body {
 }
 
 #app {
-    @apply flex flex-col gap-8 p-11 ;
+    @apply flex flex-col gap-8 p-11;
 }
 
 .box {
@@ -19,7 +19,7 @@ body {
 }
 
 .btn {
-    @apply w-full  p-3 rounded-3xl hover:cursor-pointer disabled:opacity-[0.56] focus:border-2 focus:border-[#D9CDF7] focus:border-solid disabled:cursor-not-allowed;
+    @apply w-full p-3 rounded-3xl hover:cursor-pointer disabled:opacity-[0.56] focus:border-2 focus:border-[#D9CDF7] focus:border-solid disabled:cursor-not-allowed flex justify-center items-center gap-2;
 }
 
 .loader {
@@ -28,5 +28,9 @@ body {
 }
 
 .movable {
-    @apply hover:cursor-move;
+    @apply  hover:cursor-move;
+}
+
+img{
+    @apply w-6 h-6;
 }

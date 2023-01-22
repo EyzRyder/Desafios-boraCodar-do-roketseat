@@ -16,20 +16,21 @@
     <div id="app">
 
         <div id="box1" class="box">
-            <button id="primary" draggable="true" class=" bg-primary-default hover:bg-primary-light btn">
+            <button id="primary" draggable="false" class=" bg-primary-default hover:bg-primary-light btn">
                 INTERAJA COMIGO
             </button>
         </div>
 
         <div id="box2" class="box">
-            <button id="secondary" disabled draggable="false" class=" bg-secondary-default hover:bg-secondary-light btn">
+            <button id="secondary" disabled="true" draggable="false"
+                class=" bg-secondary-default hover:bg-secondary-light btn disabled">
                 INTERAJA COMIGO
             </button>
         </div>
 
         <div id="box3" class="box">
-            <button id="tertiary" draggable="false" class="btn loader">
-                <i class="fa fa-circle-o-notch fa-spin"></i> LOADING
+            <button id="tertiary" draggable="true" class="btn movable">
+                <img src="./assets/reorder-three.svg" alt="movable button"> INTERAJA COMIGO
             </button>
         </div>
 
@@ -38,6 +39,7 @@
 
 <script>
     document.querySelectorAll('.btn').forEach(item => {
+
         item.addEventListener('dragstart', (e) => {
             e.currentTarget.classList.add('dragging');
             e.dataTransfer.setData("box", e.target.parentElement.id);
@@ -47,6 +49,39 @@
         item.addEventListener('dragend', (e) => {
             e.currentTarget.classList.remove('dragging');
         });
+
+        item.addEventListener('click', (e) => {
+            if(e.currentTarget == document.querySelector('.btn.movable')){return}
+
+            let btnCurrent = e.currentTarget;
+            btnCurrent.innerHTML = '<i class="fa fa-circle-o-notch fa-spin"></i> LOADING';
+            btnCurrent.classList.toggle('loader');
+
+            setTimeout(() => {
+                btnCurrent.classList.toggle('loader');
+
+                // made clickable the disable button
+                let oldDisabledBtn = document.querySelector(".btn.disabled");
+                oldDisabledBtn.removeAttribute("disabled");
+                oldDisabledBtn.classList.remove("disabled");
+
+                //disable movable button
+                let oldMovableBtn = document.querySelector(".btn.movable");
+                oldMovableBtn.innerHTML = 'INTERAJA COMIGO';
+                oldMovableBtn.classList.add("disabled");
+                oldMovableBtn.classList.remove("movable");
+                oldMovableBtn.setAttribute("draggable", false);
+                oldMovableBtn.setAttribute("disabled",true);
+
+                // made current button movable
+                btnCurrent.classList.add('movable');
+                btnCurrent.innerHTML='<img src="./assets/reorder-three.svg" alt="movable button"> INTERAJA COMIGO';
+                btnCurrent.setAttribute("draggable", true);
+                console.log(btnCurrent);
+            }, 3000)
+
+        })
+
     });
 
     document.querySelectorAll('.box').forEach(item => {

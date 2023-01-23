@@ -1,0 +1,24 @@
+{
+  "name": "desafios-boracodar-do-roketseat",
+  "version": "1.0.0",
+  "description": "Projetos #boraCodar da Rocketseat",
+  "main": "index.js",
+    "type": "module",
+  "scripts": {
+    "buildCss": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EyzRyder/Desafios-boraCodar-do-roketseat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EyzRyder/Desafios-boraCodar-do-roketseat/issues"
+  },
+  "homepage": "https://github.com/EyzRyder/Desafios-boraCodar-do-roketseat#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  }
+}

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Projetos #boraCodar da Rocketseat",
   "main": "index.js",
-    "type": "module",
+  "type": "module",
   "scripts": {
-    "buildCss": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch"
+    "buildCss": "npx tailwindcss -i ./src/style.css -o ./public/style.css --watch"
   },
   "repository": {
     "type": "git",

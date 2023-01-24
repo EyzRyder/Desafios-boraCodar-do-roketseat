@@ -7,7 +7,7 @@
 }
 
 body {
-    @apply min-h-screen bg-[#130F1E] text-white flex justify-center items-center;
+    @apply min-h-screen bg-[#15121E] text-white flex justify-center items-center;
 }
 
 #collection {
@@ -15,9 +15,9 @@ body {
 }
 
 .desafio {
-    @apply h-[200px] w-[200px] bg-slate-300 transition-all hover:scale-[1.2] rounded p-3 relative;
+    @apply h-[200px] w-[200px] bg-[#15121E] transition-all hover:scale-[1.2] rounded p-3 relative shadow-md;
 }
 
-.desafio p{
-    @apply absolute bottom-0 left-0 w-full pb-5 overflow-hidden bg-gray-700;
+.desafio p {
+    @apply w-full;
 }

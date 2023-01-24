@@ -1,14 +1,17 @@
 [
     {
         "link":"Desafio-01",
-        "name":"Player de música"
+        "name":"Player de música",
+        "img":"./Desafio-01/assets/img/2023-01-24 19.56.40 desafios-bora-codar-do-roketseat.vercel.app 842926c70908.jpg"
     },
         {
         "link":"Desafio-02",
-        "name":"Product Card"
+        "name":"Product Card",
+        "img":"./Desafio-02/assets/img/2023-01-24 19.59.00 desafios-bora-codar-do-roketseat.vercel.app e223f7b93d65.jpg"
     },
         {
         "link":"Desafio-03",
-        "name":"Botões e Cursores"
+        "name":"Botões e Cursores",
+        "img":"./Desafio-03/assets/img/2023-01-24 19.59.29 desafios-bora-codar-do-roketseat.vercel.app 15023eb3bfe5.jpg"
     }
 ]

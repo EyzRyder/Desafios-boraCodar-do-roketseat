@@ -532,8 +532,17 @@ body {
   flex-direction: column;
   padding-left: 72px;
   padding-right: 72px;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media not all and (min-width: 640px) {
+  .contact {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .contact_head {
@@ -599,6 +608,12 @@ body {
   padding-top: 14px;
 }
 
+@media not all and (min-width: 640px) {
+  .chat>p {
+    padding-top: 1.5rem;
+  }
+}
+
 .messages {
   margin-top: 30px;
   display: flex;
@@ -610,18 +625,23 @@ body {
   width: 100%;
 }
 
+.message.yours {
+  float: right;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .contact_message, .your_message {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.your_message {
+.your_message .message_content, .your_name {
   float: right;
-}
-
-.your_name {
   display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
   flex-direction: row-reverse;
 }
 

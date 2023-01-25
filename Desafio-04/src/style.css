@@ -11,7 +11,7 @@ body {
 }
 
 .contact {
-    @apply min-h-screen px-[72px] py-[32px] flex flex-col;
+    @apply min-h-screen px-[72px] py-8 flex flex-col max-sm: py-6 max-sm:px-8;
 }
 
 .contact_head {
@@ -49,7 +49,7 @@ body {
 }
 
 .chat>p {
-    @apply flex justify-center pt-[14px];
+    @apply flex justify-center pt-[14px] max-sm:pt-6;
 }
 
 .messages {
@@ -60,18 +60,18 @@ body {
     @apply w-full;
 }
 
+.message.yours {
+    @apply flex flex-row-reverse float-right;
+}
+
 .contact_message, .your_message {
-    @apply flex flex-col gap-[10px];
+    @apply flex flex-col gap-[10px] max-sm:w-[50%];
 }
 
-.your_message {
-    @apply float-right ;
+.your_message .message_content, .your_name {
+    @apply flex flex-row-reverse float-right w-fit;
 }
 
-.your_name{
-    @apply flex  flex-row-reverse;
-
-}
 
 .contact_name, .your_name {
     @apply text-xs;

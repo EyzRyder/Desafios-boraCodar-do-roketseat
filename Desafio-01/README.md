@@ -4,7 +4,7 @@ Primeiro projeto dos desafios semanais, o #boracodar é um espaço para mostrar 
 So foi um questão simples de layout mas planejo colocar a função de tocar musica mesmo.
 
 <a href="https://desafios-bora-codar-do-roketseat.vercel.app/Desafio-01/index.html" target="_blank">
-  <img alt="link-figma" height="20" src="https://img.shields.io/badge/Player-Acessar%20Player-blue" />
+  <img alt="link-figma" height="20" src="https://img.shields.io/badge/Site-Acessar-blue" />
 </a>
 
 <p align="center">

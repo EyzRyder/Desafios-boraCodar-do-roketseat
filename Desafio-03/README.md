@@ -1,7 +1,7 @@
 # Bora codar 03 - Butões e cursores
 
-<a href="https://desafios-bora-codar-do-roketseat.vercel.app/Desafio-01/index.html" target="_blank">
-  <img alt="link-figma" height="20" src="https://img.shields.io/badge/Player-Acessar%20Player-blue" />
+<a href="https://desafios-bora-codar-do-roketseat.vercel.app/Desafio-03/index.html" target="_blank">
+  <img alt="link-figma" height="20" src="https://img.shields.io/badge/Site-Acessar-blue" />
 </a>
 
 <p align="center">

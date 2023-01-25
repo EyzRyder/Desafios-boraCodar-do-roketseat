@@ -5,7 +5,7 @@
 </a>
 
 <p align="center">
-  <img alt="Projeto MediaPlay" src="./assets/img/tumbnail.jpg" width="100%">
+  <img alt="Chat place" src="./assets/img/tumbnail.jpg" width="100%">
 </p>
 
 ## Sobre

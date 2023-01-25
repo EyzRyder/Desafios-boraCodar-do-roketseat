@@ -8,8 +8,8 @@ fetch('../data.json')
         json.forEach((item) => {
             // console.log(item.link)
             desafios.innerHTML += `<a href="../${item.link}/index.html"> <div class="desafio"> 
-            <img src="${item.img}" alt="" />
-            <p>${item.link} - ${item.name}</p>
+            <img src="${item.img}" alt="desafio preview" />
+            <p class="pt-2">${item.link} - ${item.name}</p>
             </div>
             </a>
             `;

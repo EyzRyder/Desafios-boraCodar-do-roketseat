@@ -7,7 +7,7 @@
 }
 
 body {
-    @apply min-h-screen bg-[#15121E] text-white ;
+    @apply min-h-screen bg-[#15121E] text-white;
 }
 
 #collection {
@@ -15,7 +15,7 @@ body {
 }
 
 .desafio {
-    @apply h-[200px] w-[200px] bg-[#15121E] transition-all hover:scale-[1.2] rounded p-3 my-4 relative shadow-md  shadow-slate-700 hover:shadow-slate-300;
+    @apply h-[200px] w-[200px] bg-[#0F0B16] transition-all hover:scale-[1.2] rounded p-3 my-4 relative shadow-md shadow-slate-700 hover:shadow-slate-300;
 }
 
 .desafio p {

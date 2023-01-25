@@ -11,7 +11,7 @@ body {
 }
 
 #collection {
-    @apply flex flex-wrap w-[calc(100%-4em)] mx-8 gap-7;
+    @apply flex flex-wrap w-[calc(100%-4em)] justify-center items-center mx-8 gap-7;
 }
 
 .desafio {

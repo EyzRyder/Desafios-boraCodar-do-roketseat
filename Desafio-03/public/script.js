@@ -1,9 +1,12 @@
- document.querySelectorAll('.btn').forEach(item => {
+document.querySelectorAll('.btn').forEach(item => {
 
-        item.addEventListener('dragstart', (e) => {
-            e.currentTarget.classList.add('dragging');
+    item.addEventListener('dragstart', (e) => {
+        e.currentTarget.classList.add('dragging');
+        if (e.target.parentElement.className !== 'box'){ return}
             e.dataTransfer.setData("box", e.target.parentElement.id);
             e.dataTransfer.setData("button", e.target.id);
+            console.log(e.target.parentElement.className)
+            console.log(e.currentTarget)
         });
 
         item.addEventListener('dragend', (e) => {
@@ -52,6 +55,13 @@
 
             let box = document.getElementById(e.dataTransfer.getData("box"));
             let btn = document.getElementById(e.dataTransfer.getData("button"));
+
+            console.log(e.currentTarget)
+            console.log(box)
+            console.log(btn)
+            console.log(e.currentTarget.querySelector('.box')) 
+
+            // if(){}
             box.appendChild(e.currentTarget.firstElementChild);
             e.currentTarget.appendChild(btn);
         });

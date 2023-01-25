@@ -5,7 +5,7 @@
 </a>
 
 <p align="center">
-  <img alt="Projeto MediaPlay" src="./assets/img/2023-01-24 19.59.29 desafios-bora-codar-do-roketseat.vercel.app 15023eb3bfe5.jpg" width="100%">
+  <img alt="Projeto MediaPlay" src="./assets/img/tumbnail.jpg" width="100%">
 </p>
 
 ## 🚀 Tecnologias

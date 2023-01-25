@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    @apply m-0 p-0 box-border;
+}
+
+body {
+    @apply bg-[#1A1924] text-white;
+}
+
+.contact {
+    @apply min-h-screen px-[72px] py-[32px] flex flex-col;
+}
+
+.contact_head {
+    @apply flex w-full h-12 justify-center items-center;
+}
+
+.contact_img {
+    @apply rounded-full object-cover h-12 w-12;
+}
+
+.contact_info {
+    @apply flex flex-col px-4 flex-1;
+}
+
+.contact_info h4 {
+    @apply font-bold text-base text-[#e1e1e6];
+}
+
+.contact_status {
+    @apply flex items-center gap-1 text-[#00B37E];
+}
+
+.ellipse {
+    @apply w-2 h-2 bg-[#00B37E] rounded-full;
+}
+
+.close_icon {
+    @apply w-5 h-5;
+}
+
+
+
+.chat {
+    @apply flex-1;
+}
+
+.chat>p {
+    @apply flex justify-center pt-[14px];
+}
+
+.messages {
+    @apply flex flex-col mt-[30px] gap-[30px];
+}
+
+.message {
+    @apply w-full;
+}
+
+.contact_message, .your_message {
+    @apply flex flex-col gap-[10px];
+}
+
+.your_message {
+    @apply float-right ;
+}
+
+.your_name{
+    @apply flex  flex-row-reverse;
+
+}
+
+.contact_name, .your_name {
+    @apply text-xs;
+}
+
+.message_content {
+    @apply p-[14px] w-fit rounded-lg;
+}
+
+.contact_message .message_content {
+    @apply bg-[#633BBC] rounded-tl-none;
+}
+
+.your_message .message_content {
+    @apply bg-[#07847E] rounded-tr-none;
+}
+
+.textInput {
+    @apply mt-3 bg-[#282843] px-6 py-[14px] flex rounded-full items-center;
+}
+
+.textInput input {
+    @apply bg-transparent border-none outline-none flex-1 mr-[10px];
+}

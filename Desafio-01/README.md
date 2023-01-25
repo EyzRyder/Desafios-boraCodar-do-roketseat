@@ -8,11 +8,11 @@ So foi um questão simples de layout mas planejo colocar a função de tocar mus
 </a>
 
 <p align="center">
-  <img alt="Projeto MediaPlay" src="./assets/img/2023-01-24 19.56.40 desafios-bora-codar-do-roketseat.vercel.app 842926c70908.jpg" width="100%">
+  <img alt="Projeto MediaPlay" src="./assets/img/tumbnail.jpg" width="100%">
 </p>
 
-
 ## 🚀 Tecnologias
+
 - HTML 5
 - CSS 3
 - Tailwindcss

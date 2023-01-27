@@ -35,7 +35,7 @@ body * {
 
 /* PLAYER 1 */
 #player-1 {
-    @apply py-[50px] px-[p38x] w-fit;
+    @apply py-[50px] px-[38x] w-fit;
     grid-area: A;
 }
 

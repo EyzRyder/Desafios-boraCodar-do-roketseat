@@ -43,7 +43,7 @@
 }
 
 .button {
-    @apply rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center;
+    @apply rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12];
     box-shadow:
         0px 11px 7px rgba(0, 0, 0, 0.01),
         0px 7px 7px rgba(0, 0, 0, 0.04),
@@ -53,7 +53,7 @@
         inset 0px 2px 3px rgba(255, 255, 255, 0.06);
 }
 
-#CE {
+#delete {
     @apply text-[#975DFA];
 }
 

@@ -14,18 +14,18 @@
         <div class="calculatorContainer">
 
             <div class="calculo">
-                <h5 class="prev">1 + 1</h5>
+                <h5 id="last_operation_history" class="prev"></h5>
                 <div class="resultado">
-                    <img src="./assets/svgs/Equals.svg" class="equals"></img>
-                    <h1 class="input">2</h1>
+                    <img src="./assets/svgs/Equals.svg" class="equals"/>
+                    <h1 id="box" class="input">0</h1>
                 </div>
             </div>
 
             <div class="teclado">
-                <div id="CE" class="button">CE</div>
-                <div class="button">C</div>
-                <div class="button">%</div>
-                <div class="button simbolos"><img src="./assets/svgs/Percent.svg" alt=""></div>
+                <div id="delete" class="button">CE</div>
+                <div id="deleteAll" class="button">C</div>
+                <div id="percent" class="button"><img src="./assets/svgs/Percent.svg" alt=""></div>
+                <div id="divide" class="button simbolos"><img src="./assets/svgs/Divide.svg" alt=""></div>
                 <div class="button">7</div>
                 <div class="button">8</div>
                 <div class="button">9</div>
@@ -45,6 +45,8 @@
             </div>
         </div>
     </div>
+
+    <script src="./public/script.js"></script>
 </body>
 
 </html>

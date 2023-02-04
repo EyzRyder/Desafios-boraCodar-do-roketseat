@@ -647,7 +647,7 @@ video {
   color: rgb(151 93 250 / var(--tw-text-opacity));
 }
 
-.simbolos {
+.operator {
   --tw-bg-opacity: 1;
   background-color: rgb(70 40 120 / var(--tw-bg-opacity));
 }

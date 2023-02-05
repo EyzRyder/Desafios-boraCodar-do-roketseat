@@ -62,5 +62,9 @@
 }
 
 #equal {
-    @apply bg-[#7F45E2];
+    @apply bg-[#7F45E2] hover:bg-[#0f0e12];
+}
+
+#dot {
+    @apply bg-[#2D2A37] hover:bg-[#0f0e12];
 }

@@ -90,7 +90,7 @@ plusMinus.addEventListener('click', () => {
 });
 
 C_deleteAll.addEventListener('click', () => {
-    window.location.reload()
+    deleteAll();
 });
 
 CE_delete.addEventListener('click', () => {
@@ -262,4 +262,48 @@ function calculate(num1, num2, operator) {
         total = total.toPrecision(12);
     }
     return parseFloat(total);
+}
+
+function deleteAll() {
+    window.location.reload()
+}
+
+document.addEventListener('keydown', keyPressed);
+
+// function to capture keydown events
+function keyPressed(e) {
+    e.preventDefault();
+
+    if (e.key == "Delete") {
+        deleteAll();
+        return;
+    }
+
+    var isNumber = isFinite(e.key);
+    var enterPress;
+    var dotPress;
+    var commaPress = false;
+
+    if (e.key == "Enter") {
+        enterPress = equal;
+    }
+    if (e.key == ".") {
+        dotPress = dot;
+    }
+    if (e.key == ",") {
+        commaPress = true;
+    }
+
+    if (isNumber || operators.includes(e.key) || e.key == "Enter" || e.key == dotPress ||
+        commaPress || e.key == "Backspace") {
+        if (e.key == "Enter") {
+            pressBtn(enterPress)
+        }
+        else if (commaPress) {
+            pressBtn(dot)
+        }
+        else {
+            pressBtn(e.key)
+        }
+    }
 }

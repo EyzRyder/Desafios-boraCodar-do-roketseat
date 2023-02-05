@@ -23,17 +23,37 @@ let operators = ["+", "-", "/", "*"];
 
 document.querySelectorAll(".num").forEach(btn => {
     btn.addEventListener('click', (e) => {
-        console.log(e.currentTarget.innerText);
         pressBtn(e.currentTarget.innerText);
     });
 });
 
 document.querySelectorAll(".operator").forEach(operator => {
     operator.addEventListener('click', (e) => {
-        console.log(e.currentTarget.getAttribute('value'));
         pressBtn(e.currentTarget.getAttribute('value'));
     });
 });
+
+percent.addEventListener("click", () => { 
+
+    if (numbers.length > 0 && typeof last_operator != "undefined") {
+        if (last_operator == "+" || last_operator == "-") {
+            inputBox.innerText = numbers * inputBox.innerText / 100
+        }
+        else {
+            inputBox.innerText = inputBox.innerText / 100
+        }
+    }
+    else {
+        inputBox.innerText = inputBox.innerText / 100
+    }
+    numbers = []
+    numbers.push(inputBox.innerText)
+
+    // deselect operator if any selected
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.backgroundColor = "#e68a00";
+    }
+})
 
 plusMinus.addEventListener('click', () => {
     // if any operator is already pressed

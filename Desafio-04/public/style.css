@@ -631,23 +631,38 @@ body {
   flex-direction: row-reverse;
 }
 
+.your_message {
+  align-items: flex-end;
+}
+
 .contact_message, .your_message {
   display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
   flex-direction: column;
   gap: 10px;
+}
+
+@media not all and (min-width: 640px) {
+  .contact_message, .your_message {
+    width: 50%;
+  }
 }
 
 .your_message .message_content, .your_name {
   float: right;
   display: flex;
-  width: -moz-fit-content;
-  width: fit-content;
   flex-direction: row-reverse;
+  text-align: right;
 }
 
 .contact_name, .your_name {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.contact_name {
+  text-align: left;
 }
 
 .message_content {

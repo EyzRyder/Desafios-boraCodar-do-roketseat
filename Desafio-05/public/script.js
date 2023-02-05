@@ -75,6 +75,21 @@ plusMinus.addEventListener('click', () => {
         return
     }
     inputBox.innerText = -inputBox.innerText
+});
+
+C_deleteAll.addEventListener('click', () => {
+    window.location.reload()
+});
+
+CE_delete.addEventListener('click', () => {
+
+    if (numbers.length > 0 && typeof last_operator != "undefined") {
+        inputBox.innerText = 0
+        var temp = numbers[0]
+        numbers = []
+        numbers.push(temp)
+        firstNum = true;
+    }
 })
 
 function pressBtn(btn) {
@@ -185,7 +200,7 @@ function pressBtn(btn) {
 
                 // append second number to history
                 if (!last_operation_history.innerText.includes("=")) {
-                    last_operation_history.innerText += " " + numbers[1] + " ="
+                    last_operation_history.innerText += " " + numbers[1] + " "
                 }
 
                 temp_num = numbers[0]
@@ -235,8 +250,4 @@ function calculate(num1, num2, operator) {
         total = total.toPrecision(12);
     }
     return parseFloat(total);
-}
-
-function button_clear() {
-    window.location.reload()
 }

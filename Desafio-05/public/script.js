@@ -1,24 +1,20 @@
+const operator = document.getElementsByClassName("operator");
+const CE_delete = document.getElementById("delete");
+const C_deleteAll = document.getElementById("deleteAll");
+const percent = document.getElementById("percent");
+const plusMinus = document.getElementById("plusMinus");
+const dot = document.getElementById("dot");
+const equal = document.getElementById("equal").getAttribute('value');
+const operators = ["+", "-", "/", "*"];
+
 let prev = document.getElementById("last_operation_history");
 let inputBox = document.getElementById("box");
-let operator = document.getElementsByClassName("operator");
-
-let CE_delete = document.getElementById("delete");
-let C_deleteAll = document.getElementById("deleteAll");
-let percent = document.getElementById("percent");
-let divide = document.getElementById("divide");
-let multi = document.getElementById("multi");
-let sub = document.getElementById("sub");
-let sum = document.getElementById("sum");
-let plusMinus = document.getElementById("plusMinus");
-let dot = document.getElementById("dot").getAttribute('value');
-let equal = document.getElementById("equal").getAttribute('value');
 
 let operator_value;
 let last_button;
 let calc_operator;
 var firstNum = true;
 let numbers = [];
-let operators = ["+", "-", "/", "*"];
 
 
 document.querySelectorAll(".num").forEach(btn => {
@@ -33,7 +29,7 @@ document.querySelectorAll(".operator").forEach(operator => {
     });
 });
 
-percent.addEventListener("click", () => { 
+percent.addEventListener('click', () => {
 
     if (numbers.length > 0 && typeof last_operator != "undefined") {
         if (last_operator == "+" || last_operator == "-") {
@@ -49,10 +45,6 @@ percent.addEventListener("click", () => {
     numbers = []
     numbers.push(inputBox.innerText)
 
-    // deselect operator if any selected
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = "#e68a00";
-    }
 })
 
 plusMinus.addEventListener('click', () => {

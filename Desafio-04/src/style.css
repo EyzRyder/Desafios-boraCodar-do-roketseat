@@ -11,7 +11,7 @@ body {
 }
 
 .contact {
-    @apply min-h-screen px-[72px] py-8 flex flex-col max-sm: py-6 max-sm:px-8;
+    @apply min-h-screen px-[72px] py-8 flex flex-col max-sm:py-6 max-sm:px-8;
 }
 
 .contact_head {
@@ -64,17 +64,25 @@ body {
     @apply flex flex-row-reverse float-right;
 }
 
+.your_message {
+    @apply items-end;
+}
+
 .contact_message, .your_message {
-    @apply flex flex-col gap-[10px] max-sm:w-[50%];
+    @apply flex flex-col gap-[10px] max-sm:w-[50%] w-fit;
 }
 
 .your_message .message_content, .your_name {
-    @apply flex flex-row-reverse float-right w-fit;
+    @apply flex flex-row-reverse float-right text-right;
 }
 
 
 .contact_name, .your_name {
     @apply text-xs;
+}
+
+.contact_name {
+    @apply text-left;
 }
 
 .message_content {

@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, body {
+    @apply m-0 p-0 box-border;
+}
+
+.mainContainer {
+    @apply p-0 m-0 w-full min-h-screen flex bg-gradient-to-b from-[#807ECE] to-[#8E7ECE] justify-center items-center text-[#EBEBEB];
+}
+
+.calculatorContainer {
+    @apply w-[22.25rem] h-[34.75rem] bg-[#2D2A37] rounded-[48px] flex flex-col gap-[26px] pb-8 pt-[54px] px-8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 188px 52px rgba(0, 0, 0, 0.01), 0px 120px 48px rgba(0, 0, 0, 0.04), 0px 68px 41px rgba(0, 0, 0, 0.15), 0px 30px 30px rgba(0, 0, 0, 0.26), 0px 8px 17px rgba(0, 0, 0, 0.29), inset 0px 6px 8px rgba(255, 255, 255, 0.1), inset 0px -4px 5px rgba(0, 0, 0, 0.22);
+}
+
+/* calculo */
+.calculo {
+    @apply w-full px-[18px] flex flex-col gap-2;
+}
+
+.prev {
+    @apply text-right text-[#6B6B6B] text-xl;
+}
+
+.resultado {
+    @apply flex items-center;
+}
+
+.equals {
+    @apply flex-1 flex items-center justify-center text-[#6B6B6B] w-5 h-5;
+}
+
+.input {
+    @apply flex-[7] text-right text-4xl;
+}
+
+/* buttons */
+
+.teclado {
+    @apply flex flex-wrap gap-3;
+}
+
+.button {
+    @apply rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12];
+    box-shadow:
+        0px 11px 7px rgba(0, 0, 0, 0.01),
+        0px 7px 7px rgba(0, 0, 0, 0.04),
+        0px 4px 6px rgba(0, 0, 0, 0.1),
+        0px 2px 4px rgba(0, 0, 0, 0.26),
+        0px 0px 2px rgba(0, 0, 0, 0.29),
+        inset 0px 2px 3px rgba(255, 255, 255, 0.06);
+}
+
+#delete {
+    @apply text-[#975DFA];
+}
+
+.operator {
+    @apply bg-[#462878];
+}
+
+#equal {
+    @apply bg-[#7F45E2] hover:bg-[#0f0e12];
+}
+
+#dot {
+    @apply bg-[#2D2A37] hover:bg-[#0f0e12];
+}

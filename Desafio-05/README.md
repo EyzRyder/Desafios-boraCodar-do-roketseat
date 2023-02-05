@@ -1,7 +1,7 @@
-# Bora codar 00 - a
+# Bora codar 05 - Um calculador
 
 <a href="https://desafios-bora-codar-do-roketseat.vercel.app/Desafio-01/index.html" target="_blank">
-  <img alt="link-figma" height="20" src="https://img.shields.io/badge/Player-Acessar%20Player-blue" />
+  <img alt="link-figma" height="20" src="https://img.shields.io/badge/Site-Acessar%20Calculador-blue" />
 </a>
 
 <p align="center">
@@ -10,11 +10,12 @@
 
 ## Sobre
 
-00 projeto dos desafios semanais, o #boracodar é um espaço para mostrar nossas habilidades na programação.
-O desafio foi de testar a mudança dos atributos nos butoes e cursores
+Quinto projeto dos desafios semanais, o #boracodar é um espaço para mostrar nossas habilidades na programação.
+O desafio foi desta fez foi de fazer um calculador functional.
 
 
 ## 🚀 Tecnologias
 - HTML 5
 - CSS 3
+- JavaScript
 - Tailwindcss

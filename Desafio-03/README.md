@@ -17,4 +17,5 @@ O desafio foi de testar a mudança dos atributos nos butoes e cursores
 ## 🚀 Tecnologias
 - HTML 5
 - CSS 3
+- JavaScript
 - Tailwindcss

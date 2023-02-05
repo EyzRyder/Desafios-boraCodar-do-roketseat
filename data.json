@@ -18,5 +18,10 @@
     "link": "Desafio-04",
     "name": "Um Chat",
     "img": "./Desafio-04/assets/img/tumbnail.jpg"
+  },
+    {
+    "link": "Desafio-05",
+    "name": "Um Calculador",
+    "img": "./Desafio-05/assets/img/tumbnail.jpg"
   }
 ]

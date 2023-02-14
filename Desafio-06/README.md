@@ -1,7 +1,7 @@
-# Bora codar 00 - a
+# Bora codar 06 - Cartão de viagem
 
-<a href="https://desafios-bora-codar-do-roketseat.vercel.app/Desafio-01/index.html" target="_blank">
-  <img alt="link-figma" height="20" src="https://img.shields.io/badge/Player-Acessar%20Player-blue" />
+<a href="https://desafios-bora-codar-do-roketseat.vercel.app/Desafio-06/index.html" target="_blank">
+  <img alt="link-figma" height="20" src="https://img.shields.io/badge/site-Acessar-blue" />
 </a>
 
 <p align="center">
@@ -10,8 +10,8 @@
 
 ## Sobre
 
-00 projeto dos desafios semanais, o #boracodar é um espaço para mostrar nossas habilidades na programação.
-O desafio foi de testar a mudança dos atributos nos butoes e cursores
+sexto projeto dos desafios semanais, o #boracodar é um espaço para mostrar nossas habilidades na programação.
+O desafio foi recriar o design de uma carta de viagem
 
 
 ## 🚀 Tecnologias

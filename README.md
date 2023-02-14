@@ -10,5 +10,6 @@ Projetos #boraCodar da Rocketseat
 |3|Botões e Cursores|22/01/23|<a href="Desafio-03">🔗</a>|
 |4|Chat|25/01/23|<a href="Desafio-04">🔗</a>|
 |5|Calculator|04/02/23|<a href="Desafio-05">🔗</a>|
+|6|Cartão de viagem|14/02/23|<a href="Desafio-06">🔗</a>|
 
 

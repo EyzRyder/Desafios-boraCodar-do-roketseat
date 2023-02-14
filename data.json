@@ -23,5 +23,10 @@
     "link": "Desafio-05",
     "name": "Um Calculador",
     "img": "./Desafio-05/assets/img/tumbnail.jpg"
+  },
+      {
+    "link": "Desafio-06",
+    "name": "Um Cartão de embarque",
+    "img": "./Desafio-06/assets/img/tumbnail.jpg"
   }
 ]

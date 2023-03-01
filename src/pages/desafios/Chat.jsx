@@ -1,3 +1,6 @@
+import { Desafio4ContactBubble } from "../../components/Desafio4ContactBuble"
+import { Desafio4YourBubble } from "../../components/Desafio4YourBuble"
+
 export const Chat = () => {
   return (
     <div className="bg-[#1A1924] text-white min-h-screen px-[72px] py-8 flex flex-col max-sm:py-6 max-sm:px-8">
@@ -22,49 +25,13 @@ export const Chat = () => {
         <p className="flex justify-center pt-[14px] max-sm:pt-6">Hoje 11:30</p>
 
         <div className="flex flex-col mt-[30px] gap-[30px]">
-          <div className="w-full">
-            <div className="flex flex-col gap-[10px] max-sm:w-[50%] w-fit">
-              <p className="text-xs text-left">
-                Gabriel Bessi - 11:30
-              </p>
-              <p className="p-[14px] w-fit rounded-lg bg-[#633BBC] rounded-tl-none">
-                Tive uma ideia incrível para um projeto!!
-              </p>
-            </div>
-          </div>
+          <Desafio4ContactBubble user={"Gabriel Bessi"} time={"11:30"} msg={"Tive uma ideia incrível para um projeto!!"} />
 
-          <div className="w-full flex flex-row-reverse float-right">
-            <div className="items-end flex flex-col gap-[10px] max-sm:w-[50%] w-fit">
-              <p className="flex flex-row-reverse float-right text-right text-xs">
-                Voce - 11:32
-              </p>
-              <p className="flex flex-row-reverse float-right text-right bg-[#07847E] rounded-tr-none p-[14px] w-fit rounded-lg">
-                Serio? manda ai
-              </p>
-            </div>
-          </div>
+          <Desafio4YourBubble time={"11:32"} msg={"Serio? manda ai"} />
 
-          <div className="w-full">
-            <div className="flex flex-col gap-[10px] max-sm:w-[50%] w-fit">
-              <p className="text-xs text-left">
-                Gabriel Bessi - 11:34
-              </p>
-              <p className="p-[14px] w-fit rounded-lg bg-[#633BBC] rounded-tl-none">
-                E se a gente fizesse um chat moderno e responsivo em apenas uma semana?
-              </p>
-            </div>
-          </div>
-
-          <div className="w-full flex flex-row-reverse float-right">
-            <div className="items-end flex flex-col gap-[10px] max-sm:w-[50%] w-fit">
-              <p className="flex flex-row-reverse float-right text-right text-xs">
-                Voce - 11:36
-              </p>
-              <p className="flex flex-row-reverse float-right text-right bg-[#07847E] rounded-tr-none p-[14px] w-fit rounded-lg ">
-                #boraCodar! 🚀
-              </p>
-            </div>
-          </div>
+          <Desafio4ContactBubble user={"Gabriel Bessi"} time={"11:34"} msg={"E se a gente fizesse um chat moderno e responsivo em apenas uma semana?"} />
+          
+          <Desafio4YourBubble time={"11:36"} msg={"#boraCodar! 🚀"} />
         </div>
 
       </main>

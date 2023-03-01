@@ -4,6 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 import { PlayerDeMusic } from "./pages/desafios/PlayerDeMusic";
+import { ProductCard } from "./pages/desafios/ProductCard";
 import { Home } from "./pages/Home";
 
 export const router = createBrowserRouter(
@@ -12,7 +13,7 @@ export const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="desafio">
         <Route path="1" element={<PlayerDeMusic />} />
-        <Route path="2" element={<Home />} />
+        <Route path="2" element={<ProductCard />} />
         <Route path="3" element={<Home />} />
         <Route path="4" element={<Home />} />
         <Route path="5" element={<Home />} />

@@ -4,7 +4,7 @@ export const ProductCard = () => {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <div className="flex bg-[#D9CDF7] text-[#271A45] min-h-screen items-center justify-center gap-9 max-md:flex-col">
+    <div className="productCard flex bg-[#D9CDF7] text-[#271A45] min-h-screen items-center justify-center gap-9 max-md:flex-col">
       <div class="relative">
         <img
           id="toggle"

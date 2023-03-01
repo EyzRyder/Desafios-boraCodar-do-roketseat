@@ -3,6 +3,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import { BlogCarnaval } from "./pages/desafios/BlogCarnaval";
 import { ButaoCursores } from "./pages/desafios/ButaoCursores";
 import { Calculadora } from "./pages/desafios/Calculadora";
 import { CartãoDeViagem } from "./pages/desafios/CartãoDeViagem";
@@ -23,6 +24,7 @@ export const router = createBrowserRouter(
         <Route path="4" element={<Chat />} />
         <Route path="5" element={<Calculadora />} />
         <Route path="6" element={<CartãoDeViagem />} />
+        <Route path="7" element={<BlogCarnaval />} />
         <Route path="8" element={<Dashboard />} />
 
       </Route>

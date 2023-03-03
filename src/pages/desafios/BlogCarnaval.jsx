@@ -1,7 +1,7 @@
 import "./BlogCarnaval.scss"
 export const BlogCarnaval = () => {
   return (
-    <div>
+    <div className="blogCarnaval">
       <header>
         <div className="content">
           <div className="top">

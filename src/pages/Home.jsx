@@ -9,7 +9,7 @@ export const Home = () => {
       <div className="flex flex-wrap w-[calc(100%-4em)] justify-center items-center mx-8 gap-7">
       {data.map(card => {
         return (
-          <DesafioCard url={card.url} description={ card.description} img={card.img} rep={card.rep} title={card.title} key={card.url} />
+          <DesafioCard url={card.url} description={ card.description} title={card.title} key={card.url} />
       )})}
       </div>
     </div>

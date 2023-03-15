@@ -39,4 +39,14 @@ export const data = [
     "title": "Dashboard",
     "description": "Um dash board de vendas."
   },
+  {
+    "url": "9",
+    "title": "Conversor de moedas",
+    "description": "Conversor de moedas"
+  },
+  {
+    "url": "10",
+    "title": "Clima",
+    "description": "Uma página de clima."
+  },
 ]

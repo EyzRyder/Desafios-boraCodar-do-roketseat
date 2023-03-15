@@ -8,6 +8,8 @@ import { ButaoCursores } from "./pages/desafios/ButaoCursores";
 import { Calculadora } from "./pages/desafios/Calculadora";
 import { CartãoDeViagem } from "./pages/desafios/CartãoDeViagem";
 import { Chat } from "./pages/desafios/Chat";
+import { Clima } from "./pages/desafios/Clima";
+import { ConversorDeMoedas } from "./pages/desafios/ConversorDeMoedas";
 import { Dashboard } from "./pages/desafios/Dashboard";
 import { PlayerDeMusic } from "./pages/desafios/PlayerDeMusic";
 import { ProductCard } from "./pages/desafios/ProductCard";
@@ -26,6 +28,8 @@ export const router = createBrowserRouter(
         <Route path="6" element={<CartãoDeViagem />} />
         <Route path="7" element={<BlogCarnaval />} />
         <Route path="8" element={<Dashboard />} />
+        <Route path="9" element={<ConversorDeMoedas />} />
+        <Route path="10" element={<Clima />} />
 
       </Route>
 

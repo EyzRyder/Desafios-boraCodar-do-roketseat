@@ -9,7 +9,9 @@ export const Calculadora = () => {
     function handleDeleteAll (){}
     function handlePercent (){}
     function handlePluesMinus (){}
-    function pressBtn (){}
+    function pressBtn(value) {
+        console.log(`${value} Ben pressed`);
+    }
     const buttons = [
         {
             id:'01',
@@ -18,14 +20,14 @@ export const Calculadora = () => {
                 CE
                 </span>
             ),
-            function:  handleCEDelete,
+            function: () => { handleCEDelete },
             isOperator: false,
             isEqual:false,
         },
         {
             id:'02',
             child: "C",
-            function: handleDeleteAll,
+            function: () => { handleDeleteAll } ,
             isOperator: false,
             isEqual:false,
         },
@@ -37,7 +39,7 @@ export const Calculadora = () => {
                 alt="percent"
                 />
             ),
-            function: handlePercent,
+            function: () => { handlePercent } ,
             isOperator: false,
             isEqual:false,
         },
@@ -49,28 +51,28 @@ export const Calculadora = () => {
                 alt="divide simbolo"
                 />
             ),
-            function: pressBtn('/'),
+            function: () => { pressBtn('/') } ,
             isOperator: true,
             isEqual:false,
         },
         {
             id:'05',
             child: "7",
-            function: pressBtn('7'),
+            function: () => { pressBtn('7') } ,
             isOperator: false,
             isEqual:false,
         },
         {
             id:'06',
             child: "8",
-            function: pressBtn('8'),
+            function: () => { pressBtn('8') } ,
             isOperator: false,
             isEqual:false,
         },
         {
             id:'07',
             child: "9",
-            function: pressBtn('9'),
+            function: () => { pressBtn('9') } ,
             isOperator: false,
             isEqual:false,
         },
@@ -82,28 +84,28 @@ export const Calculadora = () => {
                 alt=""
                 />
             ),
-            function: pressBtn('*'),
+            function: () => { pressBtn('*') } ,
             isOperator: true,
             isEqual:false,
         },
         {
             id:'09',
             child: "4",
-            function: pressBtn('4'),
+            function: () => { pressBtn('4') } ,
             isOperator: false,
             isEqual:false,
         },
         {
             id:'10',
             child: "5",
-            function: pressBtn('5'),
+            function: () => { pressBtn('5') } ,
             isOperator: false,
             isEqual: false,
         },
         {
             id:'11',
             child: "6",
-            function: pressBtn('6'),
+            function: () => { pressBtn('6') } ,
             isOperator: false,
             isEqual: false,
         },
@@ -115,28 +117,28 @@ export const Calculadora = () => {
                     alt="minus"
                 />
             ),
-            function: pressBtn('-'),
+            function: () => { pressBtn('-') },
             isOperator: true,
             isEqual:false,
         },
         {
             id:'13',
             child: "1",
-            function: pressBtn('1'),
+            function: () => { pressBtn('1') } ,
             isOperator: false,
             isEqual:false,
         },
         {
             id:'14',
             child: "2",
-            function: pressBtn('2'),
+            function: () => { pressBtn('2') } ,
             isOperator: false,
             isEqual:false,
         },
         {
             id:'15',
             child: "3",
-            function: pressBtn('3'),
+            function: () => { pressBtn('3') } ,
             isOperator: false,
             isEqual:false,
         },
@@ -148,7 +150,7 @@ export const Calculadora = () => {
                     alt=""
                 />
             ),
-            function: pressBtn('+'),
+            function: () => { pressBtn('+') } ,
             isOperator: true,
             isEqual:false,
         },
@@ -160,21 +162,21 @@ export const Calculadora = () => {
                     alt=""
                 />
             ),
-            function: handlePluesMinus,
+            function: () => { handlePluesMinus } ,
             isOperator: false,
             isEqual:false,
         },
         {
             id:'18',
             child: "0",
-            function: pressBtn('0'),
+            function: () => { pressBtn('0') } ,
             isOperator: false,
             isEqual:false,
         },
         {
             id:'1',
             child: ",",
-            function: pressBtn('.'),
+            function: () => { pressBtn('.') } ,
             isOperator: false,
             isEqual:false,
         },
@@ -186,7 +188,7 @@ export const Calculadora = () => {
                     alt=""
                 />
             ),
-            function: pressBtn('='),
+            function: () => { pressBtn('=') } ,
             isOperator: true,
             isEqual:true,
         },
@@ -233,7 +235,7 @@ export const Calculadora = () => {
                         {buttons.map(button => (
                             <Desafio5Button
                                 key={button.id}
-                                handleButton={() => {button.function}}
+                                handleChild={button.function}
                                 isOperator={button.isOperator}
                                 isEqual={button.isEqual}
                             >

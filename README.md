@@ -3,13 +3,13 @@
 Projetos #boraCodar da Rocketseat
 
 
-|Nº|Name|Date|View|
+|Nº|NAME|DATE|PREVIEW|
 | ----- | ----- | ----- | ----- |
-|1|Music Player|11/01/23|<a href="Desafio-01">🔗</a>|
-|2|Product Card|18/01/23|<a href="Desafio-02">🔗</a>|
-|3|Botões e Cursores|22/01/23|<a href="Desafio-03">🔗</a>|
-|4|Chat|25/01/23|<a href="Desafio-04">🔗</a>|
-|5|Calculator|04/02/23|<a href="Desafio-05">🔗</a>|
-|6|Cartão de viagem|14/02/23|<a href="Desafio-06">🔗</a>|
-
-
+|1|<a href="1">Music Player</a>|11/01/23|<a href="1"><img width="300px" src="./public/img/Thumbnail1.png" /></a>|
+|2|<a href="2">Product Card</a>|22/01/23|<a href="2"><img width="300px" src="./public/img/Thumbnail2.png" /></a>|
+|3|<a href="3">Botões e Cursores</a>|22/01/23|<a href="3"><img width="300px" src="./public/img/Thumbnail3.png" /></a>|
+|4|<a href="4">Chat</a>|25/01/23|<a href="4"><img width="300px" src="./public/img/Thumbnail4.png" /></a>|
+|5|<a href="5">Chat</a>|04/02/23|<a href="5"><img width="300px" src="./public/img/Thumbnail5.png" /></a>|
+|6|<a href="6">Cartão de viagem</a>|14/02/23|<a href="6"><img width="300px" src="./public/img/Thumbnail6.png" /></a>|
+|7|<a href="7">Blog de Carnaval</a>|22/02/23|<a href="7"><img width="300px" src="./public/img/Thumbnail7.png" /></a>|
+|8|<a href="8">Diagrama</a>|22/02/23|<a href="8"><img width="300px" src="./public/img/Thumbnail8.png" /></a>|

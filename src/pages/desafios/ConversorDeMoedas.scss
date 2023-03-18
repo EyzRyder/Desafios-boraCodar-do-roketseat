@@ -1,0 +1,244 @@
+.conversorDeMoedasContainer {
+  :root {
+    --text-color: #0f172a;
+    font-family: "Inter", sans-serif;
+  }
+  font-size: 16px;
+  background: #f8fafc;
+
+  height: 100vh;
+  display: grid;
+  place-content: center;
+
+  color: var(--text-color);
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+
+  main {
+    padding: 64px 80px;
+    background: #ffffff;
+    box-shadow: 0rem 04px 32px rgba(15, 23, 42, 0.15);
+    border-radius: 16px;
+
+    display: grid;
+    gap: 64px;
+  }
+
+  section {
+    h2 {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  .conversor {
+    .wrapper {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+
+  /* MONEY-WRAPPER */
+  .money-wrapper {
+    background-color: white;
+    outline: 1px solid #94a3b8;
+
+    width: 270px;
+    padding: 16px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    &:hover,
+    &:has(:focus) {
+      outline: 2.5px solid #7c3aed;
+    }
+  }
+
+  /* AMOUNT */
+  .amount {
+    border: transparent;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: var(--text-color);
+    width: 50%;
+
+    &:focus {
+      outline: transparent;
+    }
+  }
+
+  /* DROPDOWN */
+  .dropdown {
+    --bg-hover: #ede9fe;
+    width: 130px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 56px;
+    overflow: hidden;
+
+    &:hover {
+      height: fit-content;
+      overflow: initial;
+    }
+  }
+
+  .selected {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 0 8px 8px 0;
+
+    padding: 16px;
+
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      height: 24px;
+      width: 1px;
+      background-color: #94a3b8;
+      position: absolute;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      background: url(../../assets/majesticons_chevron-down-line.svg) no-repeat;
+    }
+
+    &:hover {
+      background-color: var(--bg-hover);
+    }
+  }
+
+  /*  UL */
+  ul {
+    list-style: none;
+
+    background-color: white;
+    box-shadow: 0px 4px 16px rgba(15, 23, 42, 0.15);
+    border-radius: 8px;
+
+    padding: 0;
+
+    width: 160px;
+    max-height: 170px;
+
+    margin-top: 08px;
+
+    overflow-y: scroll;
+
+    position: relative;
+    z-index: 1;
+
+  }
+  li {
+    padding: 12px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 08px;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--bg-hover);
+    }
+  }
+
+    li:hover,
+    .selected:hover {
+      background-color: var(--bg-hover);
+    }
+
+.fi.fis {
+  font-size: 24px;
+  border-radius: 50%;
+}
+  /* CAMBIO */
+
+  .cambio {
+    .wrapper {
+      margin-top: 24px;
+    }
+  }
+
+  .tooltip {
+    background-color: white;
+    box-shadow: 0 4px 16px rgb(15 23 42 / .15);
+    border-radius: 4px;
+    padding: 8px;
+  }
+
+
+  .chart-controls {
+    display: flex;
+    justify-content: space-between;
+    margin: -22px 8px 0 40px;
+  }
+
+  .chart-controls {
+    button {
+      background-color: transparent;
+      border: 0;
+
+      width: 40px;
+      height: 24px;
+
+      font-size: 12px;
+      line-height: 16px;
+      text-align: center;
+
+      cursor: pointer;
+    }
+  }
+
+  .chart-controls button:hover,
+  .chart-controls button.active {
+    background-color: #7c3aed;
+    color: white;
+    border-radius: 999px;
+    padding: 4px 8px;
+  }
+
+  @media (max-width: 500px) {
+    main {
+      padding: 16px;
+      gap: 32px
+    }
+
+    section h2 {
+      font-size: 16px;
+    }
+
+    .conversor .wrapper {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .money-wrapper {
+      width: 100%;
+    }
+  }
+
+}

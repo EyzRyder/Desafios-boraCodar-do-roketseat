@@ -13,3 +13,5 @@ Projetos #boraCodar da Rocketseat
 |6|<a href="6">Cartão de viagem</a>|14/02/23|<a href="6"><img width="300px" src="./public/img/Thumbnail6.png" /></a>|
 |7|<a href="7">Blog de Carnaval</a>|22/02/23|<a href="7"><img width="300px" src="./public/img/Thumbnail7.png" /></a>|
 |8|<a href="8">Diagrama</a>|22/02/23|<a href="8"><img width="300px" src="./public/img/Thumbnail8.png" /></a>|
+|8|<a href="9">Diagrama</a>|22/02/23|<a href="9"><img width="300px" src="./public/img/Thumbnail9.png" /></a>|
+|8|<a href="10">Diagrama</a>|22/02/23|<a href="10"><img width="300px" src="./public/img/Thumbnail10.png" /></a>|

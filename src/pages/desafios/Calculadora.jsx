@@ -2,115 +2,194 @@ import { useState } from "react";
 import { Desafio5Button } from "../../components/Desafio5Button";
 
 export const Calculadora = () => {
-    const operators = ["+", "-", "/", "*"];
     const [prev, setPrev] = useState("");
-    const [inputBox, setInputBox] = useState("");
-    function handleCEDelete (){}
-    function handleDeleteAll (){}
-    function handlePercent (){}
-    function handlePluesMinus (){}
-    function pressBtn(value) {
-        console.log(`${value} Ben pressed`);
+    const [calc, setCalc] = useState({
+        sign: "",
+        num: 0,
+        res: 0,
+    });
+
+    function pressBtn(btn) {
+
+        if (btn === "C") {
+            window.location.reload(false);
+        }
+        if (btn === "CE") {
+            return setCalc({
+                ...calc,
+                sign: "",
+                num: 0,
+                res: 0,
+            });
+        }
+        if (btn === "+-") {
+            return setCalc({
+                ...calc,
+                num: calc.num ? toLocaleString(removeSpaces(calc.num) * -1) : 0,
+                res: calc.res ? toLocaleString(removeSpaces(calc.res) * -1) : 0,
+                sign: "",
+            });
+        }
+        if (btn === "%") {
+            let num = calc.num ? parseFloat(removeSpaces(calc.num)) : 0;
+            let res = calc.res ? parseFloat(removeSpaces(calc.res)) : 0;
+
+            return setCalc({
+                ...calc,
+                num: (num /= Math.pow(100, 1)),
+                res: (res /= Math.pow(100, 1)),
+                sign: "",
+            });
+        }
+        if (btn === "=") {
+            if (calc.sign && calc.num) {
+                const math = (a, b, sign) =>
+                    sign === "+"
+                        ? a + b
+                        : sign === "-"
+                            ? a - b
+                            : sign === "*"
+                                ? a * b
+                                : a / b;
+
+                return setCalc({
+                    ...calc,
+                    res:
+                        calc.num === "0" && calc.sign === "/"
+                            ? "Can't divide with 0"
+                            : toLocaleString(math(Number(removeSpaces(calc.res)), Number(removeSpaces(calc.num)), calc.sign)),
+                    sign: "",
+                    num: 0,
+                });
+            }
+        }
+        if (btn === "/" || btn === "*" || btn === "-" || btn === "+") {
+            return setCalc({
+                ...calc,
+                sign: btn,
+                res: !calc.res && calc.num ? calc.num : calc.res,
+                num: 0,
+            });
+        }
+        if (btn === ".") {
+            return setCalc({
+                ...calc,
+                num: !calc.num.toString().includes(".") ? calc.num + btn : calc.num,
+            });
+        }
+
+        if (removeSpaces(calc.num).toString().length <= 16) {
+            return setCalc({
+                ...calc,
+                num:
+                    calc.num === 0 && btn === "0"
+                        ? "0"
+                        : removeSpaces(calc.num) % 1 === 0
+                            ? toLocaleString(Number(removeSpaces(calc.num + btn)))
+                            : toLocaleString(calc.num + btn),
+                res: !calc.sign ? 0 : calc.res,
+            });
+        }
     }
     const buttons = [
         {
-            id:'01',
+            id: '01',
             child: (
                 <span className="text-[#975DFA]">
-                CE
+                    CE
                 </span>
             ),
-            function: () => { handleCEDelete },
+            function: () => { pressBtn("CE") },
             isOperator: false,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'02',
+            id: '02',
             child: "C",
-            function: () => { handleDeleteAll } ,
-            isOperator: false,
-            isEqual:false,
-        },
-        {
-            id:'03',
-            child: (
-                <img
-                src="/svg/d5/Percent.svg"
-                alt="percent"
-                />
-            ),
-            function: () => { handlePercent } ,
-            isOperator: false,
-            isEqual:false,
-        },
-        {
-            id:'04',
-            child: (
-                <img
-                src="/svg/d5/Divide.svg"
-                alt="divide simbolo"
-                />
-            ),
-            function: () => { pressBtn('/') } ,
-            isOperator: true,
-            isEqual:false,
-        },
-        {
-            id:'05',
-            child: "7",
-            function: () => { pressBtn('7') } ,
-            isOperator: false,
-            isEqual:false,
-        },
-        {
-            id:'06',
-            child: "8",
-            function: () => { pressBtn('8') } ,
-            isOperator: false,
-            isEqual:false,
-        },
-        {
-            id:'07',
-            child: "9",
-            function: () => { pressBtn('9') } ,
-            isOperator: false,
-            isEqual:false,
-        },
-        {
-            id:'08',
-            child: (
-                <img
-                src="/svg/d5/X.svg"
-                alt=""
-                />
-            ),
-            function: () => { pressBtn('*') } ,
-            isOperator: true,
-            isEqual:false,
-        },
-        {
-            id:'09',
-            child: "4",
-            function: () => { pressBtn('4') } ,
-            isOperator: false,
-            isEqual:false,
-        },
-        {
-            id:'10',
-            child: "5",
-            function: () => { pressBtn('5') } ,
+            function: () => { pressBtn("C") },
             isOperator: false,
             isEqual: false,
         },
         {
-            id:'11',
-            child: "6",
-            function: () => { pressBtn('6') } ,
+            id: '03',
+            child: (
+                <img
+                    src="/svg/d5/Percent.svg"
+                    alt="percent"
+                />
+            ),
+            function: () => { pressBtn("%") },
             isOperator: false,
             isEqual: false,
         },
         {
-            id:'12',
+            id: '04',
+            child: (
+                <img
+                    src="/svg/d5/Divide.svg"
+                    alt="divide simbolo"
+                />
+            ),
+            function: () => { pressBtn('/') },
+            isOperator: true,
+            isEqual: false,
+        },
+        {
+            id: '05',
+            child: 7,
+            function: () => { pressBtn('7') },
+            isOperator: false,
+            isEqual: false,
+        },
+        {
+            id: '06',
+            child: 8,
+            function: () => { pressBtn('8') },
+            isOperator: false,
+            isEqual: false,
+        },
+        {
+            id: '07',
+            child: 9,
+            function: () => { pressBtn('9') },
+            isOperator: false,
+            isEqual: false,
+        },
+        {
+            id: '08',
+            child: (
+                <img
+                    src="/svg/d5/X.svg"
+                    alt=""
+                />
+            ),
+            function: () => { pressBtn('*') },
+            isOperator: true,
+            isEqual: false,
+        },
+        {
+            id: '09',
+            child: 4,
+            function: () => { pressBtn('4') },
+            isOperator: false,
+            isEqual: false,
+        },
+        {
+            id: '10',
+            child: 5,
+            function: () => { pressBtn('5') },
+            isOperator: false,
+            isEqual: false,
+        },
+        {
+            id: '11',
+            child: 6,
+            function: () => { pressBtn('6') },
+            isOperator: false,
+            isEqual: false,
+        },
+        {
+            id: '12',
             child: (
                 <img
                     src="/svg/d5/Minus.svg"
@@ -119,80 +198,86 @@ export const Calculadora = () => {
             ),
             function: () => { pressBtn('-') },
             isOperator: true,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'13',
-            child: "1",
-            function: () => { pressBtn('1') } ,
+            id: '13',
+            child: 1,
+            function: () => { pressBtn('1') },
             isOperator: false,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'14',
-            child: "2",
-            function: () => { pressBtn('2') } ,
+            id: '14',
+            child: 2,
+            function: () => { pressBtn('2') },
             isOperator: false,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'15',
-            child: "3",
-            function: () => { pressBtn('3') } ,
+            id: '15',
+            child: 3,
+            function: () => { pressBtn('3') },
             isOperator: false,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'16',
+            id: '16',
             child: (
                 <img
                     src="/svg/d5/Plus.svg"
                     alt=""
                 />
             ),
-            function: () => { pressBtn('+') } ,
+            function: () => { pressBtn('+') },
             isOperator: true,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'17',
+            id: '17',
             child: (
                 <img
                     src="/svg/d5/PlusMinus.svg"
                     alt=""
                 />
             ),
-            function: () => { handlePluesMinus } ,
+            function: () => { pressBtn("+-") },
             isOperator: false,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'18',
-            child: "0",
-            function: () => { pressBtn('0') } ,
+            id: '18',
+            child: 0,
+            function: () => { pressBtn('0') },
             isOperator: false,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'1',
+            id: '1',
             child: ",",
-            function: () => { pressBtn('.') } ,
+            function: () => { pressBtn('.') },
             isOperator: false,
-            isEqual:false,
+            isEqual: false,
         },
         {
-            id:'19',
+            id: '19',
             child: (
                 <img
                     src="/svg/d5/Equals (1).svg"
                     alt=""
                 />
             ),
-            function: () => { pressBtn('=') } ,
+            function: () => { pressBtn('=') },
             isOperator: true,
-            isEqual:true,
+            isEqual: true,
         },
     ]
+
+    const toLocaleString = (num) =>
+        String(num).replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, "$1 ");
+
+    const removeSpaces = (num) => num.toString().replace(/\s/g, "");
+
 
     return (
         <div>
@@ -224,7 +309,7 @@ export const Calculadora = () => {
                             <h1
                                 id="box"
                                 className="input text-white bg-transparent outline-transparent w-full text-right text-4xl">
-                                {inputBox}
+                                {calc.num ? calc.num : calc.res}
                             </h1>
                         </div>
                     </div>

@@ -1,215 +1,196 @@
 import { useState } from "react";
+import { Desafio5Button } from "../../components/Desafio5Button";
 
 export const Calculadora = () => {
-    const operators= ["+", "-", "/", "*"];
+    const operators = ["+", "-", "/", "*"];
     const [prev, setPrev] = useState("");
     const [inputBox, setInputBox] = useState("");
-    const [operatorValue, setOperatorValue] = useState();
-    const [calcOperator, setCalcOperator] = useState();
-    const [lastOperator, setLastOperator] = useState();
-    const [lastButton, setLastButton] = useState("");
-    const [firstNum, setFirstNum] = useState(true);
-    const [numbers, setNumbers] = useState([]);
-    const [total, setTotal] = useState()
-    function pressBtn(btn) {
-        setLastButton(btn)
-
-        // if button is not an operator or = sign
-        if (!operators.includes(btn) && btn != '=') {
-            if (firstNum) {
-                // and it's a dot, show 0.
-                if (btn == '.') {
-                    setInputBox('0' + '.')
-                }
-                // else clear box and show the number
-                else {
-                    setInputBox(btn)
-                }
-                setFirstNum(false)
-            }
-            else {
-                // return if the box value is 0
-                if (inputBox.length === 1 && inputBox === 0) {
-                    if (btn === '.') {
-                        setInputBox(inputBox + btn)
-                    }
-                    return;
-                }
-                // return if the box already has a dot and clicked button is a dot
-                if (inputBox.includes('.') && btn === '.') {
-                    return;
-                }
-                // maximum allowed numbers inputted are 14
-                if (inputBox.length === 14) {
-                    return;
-                }
-
-                // if pressed dot and box already has a - sign, show -0.
-                if (btn == '.' && inputBox == "-") {
-                    setInputBox('-0' + '.')
-                }
-                // else append number
-                else {
-                    setInputBox(inputBox + btn)
-                }
-            }
-        }
-        // if it's an operator or = sign
-        else {
-
-            if (operatorValue != null && btn == operatorValue) {
-                return
-            }
-
-            // show minus sign if it's the first value selected and finally return
-            if (btn == "-" && inputBox == 0) {
-                setInputBox(btn)
-                setFirstNum(false)
-                setOperatorValue(btn)
-                return;
-            }
-            // return if minus operator pressed and it's already printed on screen 
-            else if (operators.includes(btn) && inputBox == "-") {
-                return
-            }
-            // return if minus operator pressed and history already has equal sign
-            else if (btn == "-" && operatorValue == "-" && prev.includes("=")) {
-                return
-            }
-
-            // set value of operator if it's one
-            if (operators.includes(btn)) {
-                if (typeof lastOperator != "undefined" && lastOperator != null) {
-                    setCalcOperator(lastOperator)
-                }
-                else {
-                    setCalcOperator(btn)
-                }
-                if (btn == "*") {
-                    setLastOperator("×")
-                }
-                else if (btn == "/") {
-                    setLastOperator("÷")
-                }
-                else {
-                    setLastOperator(btn)
-                }
-                setOperatorValue(btn)
-                setFirstNum(true)
-            }
-
-            // add first number to numbers array and show it on history
-            if (numbers.length == 0) {
-                setNumbers([...numbers, inputBox])
-                if (typeof lastOperator != 'undefined' && lastOperator != null) {
-                    setPrev(inputBox + ' ' + lastOperator)
-                }
-            }
-
-            // rest of calculations
-            else {
-                if (numbers.length == 1) {
-                    setNumbers([...numbers, inputBox])
-                }
-                var temp_num = inputBox
-
-                // calculate total
-                if (btn == '=' && calcOperator != null) {
-                    var value = calculate(numbers[0], numbers[1], calcOperator)
-                    setTotal(value)
-                    setInputBox(total);
-
-                    // append second number to history
-                    if (!prev.includes("=")) {
-                        setPrev(prev + ' ' + numbers[1] + ' ')
-                    }
-
-                    temp_num = numbers[0]
-
-                    setNumbers([total,...numbers])
-                    setOperatorValue(null)
-
-                    // replace first number of history with the value of total
-                    var history_arr = prev.split(" ")
-                    history_arr[0] = temp_num
-                    setPrev(history_arr.join(" "))
-                }
-                // update history with the value on screen and the pressed operator
-                else if (calcOperator != null) {
-                    setPrev(temp_num + " " + lastOperator)
-                    setCalcOperator(btn)
-                    setNumbers([])
-                    setNumbers([...numbers, inputBox])
-                }
-            }
-        }
-    }
-
-    function calculate(num1, num2, operator) {
-        let calc;
-        if (operator === "+") {
-            calc = (parseFloat)(num1) + (parseFloat)(num2)
-            setTotal(calc)
-        }
-        else if (operator === "-") {
-            calc = (parseFloat)(num1) - (parseFloat)(num2)
-            setTotal(calc)
-
-        }
-        else if (operator === "*") {
-            calc = (parseFloat)(num1) * (parseFloat)(num2)
-            setTotal(calc)
-
-        }
-        else if (operator === "/") {
-            calc = (parseFloat)(num1) / (parseFloat)(num2)
-            setTotal(calc)
-
-        }
-        else {
-            if (total == inputBox) {
-                return total
-            }
-            else {
-                return inputBox
-            }
-        }
-        // if total is not integer, show maximum 12 decimal places
-        if (!Number.isInteger(total)) {
-            calc = (parseFloat)(total).toPrecision(12)
-            setTotal(calc);
-        }
-        return parseFloat(total);
-    }
-
-    function handlePercent() {
-
-    }
-
-    function handlePluesMinus() {
-
-    }
-    function handleCEDelete() {
-    }
-
-
-
-    function handleDeleteAll() {
-        window.location.reload()
-    }
-
-    // window.addEventListener('keydown', keyPressed);
-
-    // // function to capture keydown events
-    function keyPressed(e) {
-        e.preventDefault();
-
-        if (e.key == "Delete") {
-            deleteAll();
-            return;
-        }
-
-    }
+    function handleCEDelete (){}
+    function handleDeleteAll (){}
+    function handlePercent (){}
+    function handlePluesMinus (){}
+    function pressBtn (){}
+    const buttons = [
+        {
+            id:'01',
+            child: (
+                <span className="text-[#975DFA]">
+                CE
+                </span>
+            ),
+            function:  handleCEDelete,
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'02',
+            child: "C",
+            function: handleDeleteAll,
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'03',
+            child: (
+                <img
+                src="/svg/d5/Percent.svg"
+                alt="percent"
+                />
+            ),
+            function: handlePercent,
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'04',
+            child: (
+                <img
+                src="/svg/d5/Divide.svg"
+                alt="divide simbolo"
+                />
+            ),
+            function: pressBtn('/'),
+            isOperator: true,
+            isEqual:false,
+        },
+        {
+            id:'05',
+            child: "7",
+            function: pressBtn('7'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'06',
+            child: "8",
+            function: pressBtn('8'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'07',
+            child: "9",
+            function: pressBtn('9'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'08',
+            child: (
+                <img
+                src="/svg/d5/X.svg"
+                alt=""
+                />
+            ),
+            function: pressBtn('*'),
+            isOperator: true,
+            isEqual:false,
+        },
+        {
+            id:'09',
+            child: "4",
+            function: pressBtn('4'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'10',
+            child: "5",
+            function: pressBtn('5'),
+            isOperator: false,
+            isEqual: false,
+        },
+        {
+            id:'11',
+            child: "6",
+            function: pressBtn('6'),
+            isOperator: false,
+            isEqual: false,
+        },
+        {
+            id:'12',
+            child: (
+                <img
+                    src="/svg/d5/Minus.svg"
+                    alt="minus"
+                />
+            ),
+            function: pressBtn('-'),
+            isOperator: true,
+            isEqual:false,
+        },
+        {
+            id:'13',
+            child: "1",
+            function: pressBtn('1'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'14',
+            child: "2",
+            function: pressBtn('2'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'15',
+            child: "3",
+            function: pressBtn('3'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'16',
+            child: (
+                <img
+                    src="/svg/d5/Plus.svg"
+                    alt=""
+                />
+            ),
+            function: pressBtn('+'),
+            isOperator: true,
+            isEqual:false,
+        },
+        {
+            id:'17',
+            child: (
+                <img
+                    src="/svg/d5/PlusMinus.svg"
+                    alt=""
+                />
+            ),
+            function: handlePluesMinus,
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'18',
+            child: "0",
+            function: pressBtn('0'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'1',
+            child: ",",
+            function: pressBtn('.'),
+            isOperator: false,
+            isEqual:false,
+        },
+        {
+            id:'19',
+            child: (
+                <img
+                    src="/svg/d5/Equals (1).svg"
+                    alt=""
+                />
+            ),
+            function: pressBtn('='),
+            isOperator: true,
+            isEqual:true,
+        },
+    ]
 
     return (
         <div>
@@ -249,211 +230,19 @@ export const Calculadora = () => {
                     <div
                         className="teclado flex flex-wrap gap-3"
                     >
-                        <div
-                            id="delete"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button text-[#975DFA] rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12]"
-                            onClick={() => { handleCEDelete }}
-                        >
-                            CE
-                        </div>
-                        <div
-                            id="deleteAll"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12]"
-                            onClick={() => { handleDeleteAll }}
-                        >
-                            C
-                        </div>
-                        <div
-                            id="percent"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01), 0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12]"
-                            onClick={() => { handlePercent }}
-                        >
-                            <img
-                                src="/svg/d5/Percent.svg"
-                                alt="percent"
-                            />
-                        </div>
-                        <div
-                            id="divide"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29), inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] operator bg-[#462878]"
-                            onClick={() => { pressBtn("/") }}
-                        >
-                            <img
-                                src="/svg/d5/Divide.svg"
-                                alt="divide simbolo"
-
-                            />
-                        </div>
-                        <div style={{
-                            boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                        }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('7') }}>
-                            7
-                        </div>
-                        <div
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('8') }}>
-                            8
-                        </div>
-                        <div style={{
-                            boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                        }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('9') }}>9</div>
-                        <div
-                            id="multi"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16  bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] operator bg-[#462878]"
-                            onClick={() => { pressBtn("*") }}
-                        >
-                            <img
-                                src="/svg/d5/X.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('4') }}
-                        >
-                            4
-                        </div>
-                        <div style={{
-                            boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                        }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('5') }}
-                        >
-                            5
-                        </div>
-                        <div style={{
-                            boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                        }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('6') }}
-                        >
-                            6
-                        </div>
-                        <div
-                            id="sub"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16  bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] operator bg-[#462878]" onClick={() => { pressBtn("-") }}
-                        >
-                            <img
-                                src="/svg/d5/Minus.svg"
-                                alt=""
-
-                            />
-                        </div>
-                        <div style={{
-                            boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                        }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('1') }}
-                        >
-                            1
-                        </div>
-                        <div
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('2') }}
-                        >
-                            2
-                        </div>
-                        <div
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('3') }}
-                        >
-                            3
-                        </div>
-                        <div
-                            id="sum"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] operator bg-[#462878]"
-                            onClick={() => { pressBtn("+") }}
-                        >
-                            <img
-                                src="/svg/d5/Plus.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div
-                            id="plusMinus"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12]"
-                            onClick={() => { handlePluesMinus }}
-                        >
-                            <img
-                                src="/svg/d5/PlusMinus.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04), 0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26), 0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-[#2D2A37] bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer hover:bg-[#0f0e12] num"
-                            onClick={() => { pressBtn('0') }}
-                        >
-                            0
-                        </div>
-                        <div
-                            id="dot"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16 bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer num bg-[#2D2A37] hover:bg-[#0f0e12]"
-                            onClick={() => { pressBtn(".") }}
-                        >
-                            .
-                        </div>
-                        <div
-                            id="equal"
-                            style={{
-                                boxShadow: '0px 11px 7px rgba(0, 0, 0, 0.01),0px 7px 7px rgba(0, 0, 0, 0.04),0px 4px 6px rgba(0, 0, 0, 0.1),0px 2px 4px rgba(0, 0, 0, 0.26),0px 0px 2px rgba(0, 0, 0, 0.29),inset 0px 2px 3px rgba(255, 255, 255, 0.06)'
-                            }}
-                            className="button rounded-full h-16 w-16  bg-gradient-to-b from-[#00000005] to-[#ffffff05] text-[#EBEBEB] text-2xl text-center flex items-center justify-center transition-all ease-in-out cursor-pointer operator bg-[#7F45E2] hover:bg-[#0f0e12]"
-                            onClick={() => { pressBtn("=") }}
-                        >
-                            <img
-                                src="/svg/d5/Equals (1).svg"
-                                alt=""
-                            />
-                        </div>
+                        {buttons.map(button => (
+                            <Desafio5Button
+                                key={button.id}
+                                handleButton={() => {button.function}}
+                                isOperator={button.isOperator}
+                                isEqual={button.isEqual}
+                            >
+                                {button.child}
+                            </Desafio5Button>
+                        ))}
                     </div>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }

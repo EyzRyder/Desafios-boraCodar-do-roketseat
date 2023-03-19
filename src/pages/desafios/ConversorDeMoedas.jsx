@@ -1,7 +1,7 @@
 import './ConversorDeMoedas.scss'
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
-import arrow from '/svg/d9/arrows-exchange.svg'
+import arrow from '../../assets/svg/d9/arrows-exchange.svg'
 
 import Chart from "react-apexcharts";
 import { state } from '../../chartData';

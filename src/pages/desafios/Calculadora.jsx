@@ -1,6 +1,15 @@
 import { useState } from "react";
 import { Desafio5Button } from "../../components/Desafio5Button";
 
+import equal from '../../assets/svg/d5/Equals.svg'
+import percent from "../../assets/svg/d5/Percent.svg"
+import divide from "../../assets/svg/d5/Divide.svg"
+import equals1 from "../../assets/svg/d5/Equals (1).svg"
+import minus from "../../assets/svg/d5/Minus.svg"
+import plus from "../../assets/svg/d5/Plus.svg"
+import plusMinus from "../../assets/svg/d5/PlusMinus.svg"
+import times from "../../assets/svg/d5/X.svg"
+
 export const Calculadora = () => {
     const [prev, setPrev] = useState("");
     const [calc, setCalc] = useState({
@@ -114,7 +123,7 @@ export const Calculadora = () => {
             id: '03',
             child: (
                 <img
-                    src="/svg/d5/Percent.svg"
+                    src={percent}
                     alt="percent"
                 />
             ),
@@ -126,8 +135,8 @@ export const Calculadora = () => {
             id: '04',
             child: (
                 <img
-                    src="/svg/d5/Divide.svg"
-                    alt="divide simbolo"
+                    src={divide}
+                    alt="divide"
                 />
             ),
             function: () => { pressBtn('/') },
@@ -159,8 +168,8 @@ export const Calculadora = () => {
             id: '08',
             child: (
                 <img
-                    src="/svg/d5/X.svg"
-                    alt=""
+                    src={times}
+                    alt="times"
                 />
             ),
             function: () => { pressBtn('*') },
@@ -192,7 +201,7 @@ export const Calculadora = () => {
             id: '12',
             child: (
                 <img
-                    src="/svg/d5/Minus.svg"
+                    src={minus}
                     alt="minus"
                 />
             ),
@@ -225,8 +234,8 @@ export const Calculadora = () => {
             id: '16',
             child: (
                 <img
-                    src="/svg/d5/Plus.svg"
-                    alt=""
+                    src={plus}
+                    alt="plus"
                 />
             ),
             function: () => { pressBtn('+') },
@@ -237,8 +246,8 @@ export const Calculadora = () => {
             id: '17',
             child: (
                 <img
-                    src="/svg/d5/PlusMinus.svg"
-                    alt=""
+                    src={plusMinus}
+                    alt="plusMinus"
                 />
             ),
             function: () => { pressBtn("+-") },
@@ -263,8 +272,8 @@ export const Calculadora = () => {
             id: '19',
             child: (
                 <img
-                    src="/svg/d5/Equals (1).svg"
-                    alt=""
+                    src={equals1}
+                    alt="equal"
                 />
             ),
             function: () => { pressBtn('=') },
@@ -303,7 +312,7 @@ export const Calculadora = () => {
                             className="resultado flex items-center"
                         >
                             <img
-                                src="/svg/d5/Equals.svg"
+                                src={equal}
                                 className="equals flex-1 flex items-center justify-center text-[#6B6B6B] w-5 h-5"
                             />
                             <h1

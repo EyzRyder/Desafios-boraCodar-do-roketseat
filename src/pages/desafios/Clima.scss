@@ -1,20 +1,11 @@
 .climaBox{
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-  
-    
-    
+
     font-family: "Lato", sans-serif;
       font-size: 16px;
   
   
     main {
-      background: url(/img/d10/bg.jpeg) no-repeat center/cover;
+      background: url(../../assets/img/d10/bg.jpeg) no-repeat center/cover;
   
       min-height: 100vh;
   
@@ -32,7 +23,7 @@
     }
   
     .temperature-now {
-      background: url(/img/d10/bg-temp-now.jpeg);
+      background: url(../../assets/img/d10/bg-temp-now.jpeg);
       position: relative;
   
       display: grid;

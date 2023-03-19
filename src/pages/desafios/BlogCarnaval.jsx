@@ -1,5 +1,47 @@
 import "./BlogCarnaval.scss"
+import blog1 from '../../assets/img/d7/01.jpeg'
+import blog2 from '../../assets/img/d7/02.jpeg'
+import blog3 from '../../assets/img/d7/03.jpeg'
 export const BlogCarnaval = () => {
+
+  const blogs = [
+    {
+      img: blog1,
+      title: "O Python do vovô não sobe mais",
+      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+      local:"São Paulo - SP"
+    },
+    {
+      img: blog2,
+      title: "Todo mundo null",
+      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+      local:"Salvador - BA"
+    },
+    {
+      img: blog3,
+      title: "Hoje dou exception",
+      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+      local:"Rio de Janeiro - RJ"
+    },
+    {
+      img: blog1,
+      title: "O Python do vovô não sobe mais",
+      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+      local: "São Paulo - SP"
+    },
+    {
+      img: blog2,
+      title: "Todo mundo null",
+      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+      local: "Salvador - BA"
+    },
+    {
+      img: blog3,
+      title: "Hoje dou exception",
+      description: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+      local: "Rio de Janeiro - RJ"
+    },
+  ];
   return (
     <div className="blogCarnaval">
       <header>
@@ -46,107 +88,24 @@ export const BlogCarnaval = () => {
             </div>
           </section>
           <section className="cards">
-            <div className="card">
-              <img src="/img/d7/01.jpeg" alt="" />
+
+            {blogs.map(blog => (              
+            <div key={blog.title} className="card">
+              <img src={blog.img} alt="" />
 
               <div className="content">
-                <h3>O Python do vovô não sobe mais</h3>
-                <p>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint.
+                  <h3>{ blog.title}</h3>
+                  <p>
+                    {blog.description}
                 </p>
 
                 <div className="location">
                   <i className="ph-map-pin-light"></i>
-                  São Paulo - SP
+                  {blog.local}
                 </div>
               </div>
             </div>
-
-            <div className="card">
-              <img src="/img/d7/02.jpeg" alt="" />
-
-              <div className="content">
-                <h3>Todo mundo null</h3>
-                <p>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint.
-                </p>
-
-                <div className="location">
-                  <i className="ph-map-pin-light"></i>
-                  Salvador - BA
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <img src="/img/d7/03.jpeg" alt="" />
-
-              <div className="content">
-                <h3>Hoje dou exception</h3>
-                <p>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint.
-                </p>
-
-                <div className="location">
-                  <i className="ph-map-pin-light"></i>
-                  Rio de Janeiro - RJ
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <img src="/img/d7/01.jpeg" alt="" />
-
-              <div className="content">
-                <h3>O Python do vovô não sobe mais</h3>
-                <p>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint.
-                </p>
-
-                <div className="location">
-                  <i className="ph-map-pin-light"></i>
-                  São Paulo - SP
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <img src="/img/d7/02.jpeg" alt="" />
-
-              <div className="content">
-                <h3>Todo mundo null</h3>
-                <p>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint.
-                </p>
-
-                <div className="location">
-                  <i className="ph-map-pin-light"></i>
-                  Salvador - BA
-                </div>
-              </div>
-            </div>
-
-            <div className="card">
-              <img src="/img/d7/03.jpeg" alt="" />
-
-              <div className="content">
-                <h3>Hoje dou exception</h3>
-                <p>
-                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                  amet sint.
-                </p>
-
-                <div className="location">
-                  <i className="ph-map-pin-light"></i>
-                  Rio de Janeiro - RJ
-                </div>
-              </div>
-            </div>
+            ))}
           </section>
         </div>
       </main>

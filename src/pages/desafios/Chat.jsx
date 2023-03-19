@@ -1,6 +1,9 @@
 import { Desafio4ContactBubble } from "../../components/Desafio4ContactBuble"
 import { Desafio4YourBubble } from "../../components/Desafio4YourBuble"
 
+import close from '../../assets/svg/d4/close.svg'
+import send from '../../assets/svg/d4/send.svg'
+
 export const Chat = () => {
   return (
     <div className="bg-[#1A1924] text-white min-h-screen px-[72px] py-8 flex flex-col max-sm:py-6 max-sm:px-8">
@@ -18,7 +21,7 @@ export const Chat = () => {
             <p>Online</p>
           </div>
         </div>
-        <img src="/public/svg/d4/close.svg" alt="close icon" className=" w-5 h-5" />
+        <img src={close} alt="close icon" className=" w-5 h-5" />
       </header>
 
       <main className="flex-1">
@@ -39,7 +42,7 @@ export const Chat = () => {
       <div className="mt-3 bg-[#282843] px-6 py-[14px] flex rounded-full items-center">
         <input className="bg-transparent border-none outline-none flex-1 mr-[10px]" type="text" placeholder="Digite sua mensagem" />
         <button>
-          <img src="/public/svg/d4/send.svg" alt="send icon button" />
+          <img src={send} alt="send icon button" />
         </button>
       </div>
     </div>

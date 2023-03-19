@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import hamburgur from '../../assets/svg/d3/trelines.svg'
 import './ButaoCursores.scss'
 export const ButaoCursores = () => {
 
@@ -90,7 +91,7 @@ export const ButaoCursores = () => {
 
         <div id="box3" ref={btn3}  className="box">
           <button id="tertiary" draggable={true} className="btn movable">
-            <img src="/public/svg/d3/trelines.svg" alt="movable button" /> INTERAJA COMIGO
+            <img src={hamburgur} alt="movable button" /> INTERAJA COMIGO
           </button>
         </div>
 

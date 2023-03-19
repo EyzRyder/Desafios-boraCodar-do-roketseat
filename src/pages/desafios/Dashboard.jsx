@@ -1,4 +1,6 @@
 import './Dashboard.scss'
+
+import smile from '../../assets/svg/d8/smile.svg'
 export const Dashboard = () => {
   return (
     <div className="dashboardContainer ">
@@ -6,7 +8,7 @@ export const Dashboard = () => {
         <div className="box nps grid">
           <div className="top text-center">NPS geral</div>
           <div className="middle grid">
-            <img src="/public/svg/d8/smile.svg" alt="bolinha verde sorrindo" />
+            <img src={smile} alt="bolinha verde sorrindo" />
             Excelente
           </div>
           <div className="bottom">

@@ -3,6 +3,15 @@
 Projetos #boraCodar da Rocketseat
 
 
+## 🚀 Tecnologias
+
+- React
+- Sass
+- Tailwindcss
+- Apexcharts
+- Phosphor-react
+
+
 |Nº|NAME|DATE|PREVIEW|
 | ----- | ----- | ----- | ----- |
 |01|Music Player|11/01/23|<img width="300px" src="./public/img/Thumbnail1.png" />|

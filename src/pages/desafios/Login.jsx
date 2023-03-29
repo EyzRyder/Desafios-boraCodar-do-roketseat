@@ -1,5 +1,6 @@
 import './Login.scss'
 import logo from '../../assets/svg/d11/Vector.svg'
+import { EyeSlash } from 'phosphor-react'
 export const Login = () => {
   return (
     <div className='loginContainer min-h-screen flex w-full'>
@@ -14,23 +15,30 @@ export const Login = () => {
             <p>Faça login ou registre-se para começar a construir seus projetos ainda hoje.</p>
           </div>
           <from>
-            <div className="item">
-              <label htmlFor="">E-mail</label>
-              <input className='py-4 px-3 bg-[#ffffff] border-1 border-solid border-[#e2e8f0] rounded' type="text" placeholder='Digite seu e-mail' />
-            </div>
-            <div className="item">
-              
-            
-              <label htmlFor="" className='flex'>
-                <span className='flex-1'>Senha</span> 
-                <a href="" className='text-[#7C3AED]'>Esqueceu a senha?</a>
-              </label>
-            <input className='py-4 px-3 bg-[#ffffff] border-[1_solid_#e2e8f0] rounded' type="text" placeholder='Digite sua senha'></input>
+            <div className='flex flex-col gap-3'>
+              <div className="item">
+                <label htmlFor="" className='flex font-semibold pb-2'>E-mail</label>
+                <div className=' border border-solid border-[#e2e8f0] rounded flex items-center py-4 px-3 bg-[#ffffff]'>
+                  <input className=' bg-transparent outline-transparent' type="text" placeholder='Digite seu e-mail' />
+                </div>
+              </div>
+              <div className="item">
+                <label htmlFor="" className='flex font-semibold pb-2'>
+                  <span className='flex-1'>Senha</span>
+                  <a href="" className='text-[#7C3AED]'>Esqueceu a senha?</a>
+                </label>
+                <div className=' border border-solid border-[#e2e8f0] rounded flex items-center py-4 px-3 bg-[#ffffff]'>
+                  <input className='bg-transparent   outline-transparent flex-1' type="text" placeholder='Digite sua senha' />
+                  <EyeSlash width={20} />
+                </div>
+
+              </div>
             </div>
 
-            <button className='w-full bg-[#7C3AED] py-4 px-6 rounded my-8'>Entrar</button>
+
+            <button type='submit' className='w-full bg-[#7C3AED] py-4 px-6 rounded my-8 text-white'>Entrar</button>
             <span>Ainda não tem uma conta?
-              <a href="" className='text-[#7C3AED]'>Inscreva-se</a>
+              <a href="" className='text-[#7C3AED] font-bold'>Inscreva-se</a>
             </span>
           </from>
         </div>

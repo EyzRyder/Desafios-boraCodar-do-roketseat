@@ -1,0 +1,21 @@
+.loginContainer{
+  display: grid;
+  grid-template-columns: auto auto;
+  height: 100vh;
+  
+  .leftSide{
+    width: 50%;
+    height: 100%;
+
+    .logo{}
+    .form{}
+  }
+
+  .waveImage{
+    height: 100%;
+    width: 50%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background: url(../../assets/img/d11/Rectangle.png);
+  }
+}

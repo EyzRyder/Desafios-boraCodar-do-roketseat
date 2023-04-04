@@ -1,5 +1,5 @@
 
-export const Kanban = () => {
+export function Kanban () {
   return (
     <div>Kanban</div>
   )

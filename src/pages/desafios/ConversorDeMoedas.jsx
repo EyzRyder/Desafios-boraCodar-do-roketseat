@@ -8,7 +8,7 @@ import { state } from '../../chartData';
 import { useState } from 'react';
 
 
-export const ConversorDeMoedas = () => {
+export function ConversorDeMoedas () {
   const [moeda1, setMoeda1] = useState();
   const [moeda2, setMoeda2] = useState();
 

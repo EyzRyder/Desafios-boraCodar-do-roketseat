@@ -14,7 +14,7 @@ import weatherRain from '../../assets/svg/d10/weather-rain.svg'
 import weatherSun from '../../assets/svg/d10/weather-sun.svg'
 import weatherThunder from '../../assets/svg/d10/weather-thunder.svg'
 
-export const Clima = () => {
+export function Clima () {
   return (
     <div className="climaBox">
         <main>

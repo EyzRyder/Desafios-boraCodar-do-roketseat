@@ -1,7 +1,7 @@
 import './Dashboard.scss'
-
 import smile from '../../assets/svg/d8/smile.svg'
-export const Dashboard = () => {
+
+export function Dashboard () {
   return (
     <div className="dashboardContainer ">
       <div id="app" className=" grid">

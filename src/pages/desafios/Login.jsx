@@ -1,7 +1,7 @@
 import './Login.scss'
 import logo from '../../assets/svg/d11/Vector.svg'
 import { EyeSlash } from 'phosphor-react'
-export const Login = () => {
+export function Login () {
   return (
     <div className='loginContainer min-h-screen flex w-full'>
       <div className='leftSide flex flex-col relative flex justify-center items-center pl-28 pr-52'>

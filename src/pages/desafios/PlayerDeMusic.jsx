@@ -1,5 +1,5 @@
 import './PlayerDeMusic.scss'
-export const PlayerDeMusic = () => {
+export function PlayerDeMusic (){
   return (
     <div className='productCard' >
 

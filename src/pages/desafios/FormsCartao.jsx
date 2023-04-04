@@ -1,5 +1,5 @@
 
-export const FormsCartao = () => {
+export function FormsCartao () {
   return (
     <div>FormsCartao</div>
   )

@@ -2,7 +2,8 @@ import "./BlogCarnaval.scss"
 import blog1 from '../../assets/img/d7/01.jpeg'
 import blog2 from '../../assets/img/d7/02.jpeg'
 import blog3 from '../../assets/img/d7/03.jpeg'
-export const BlogCarnaval = () => {
+
+export function BlogCarnaval () {
 
   const blogs = [
     {

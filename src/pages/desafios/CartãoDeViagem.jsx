@@ -1,7 +1,7 @@
 
 import { AirplaneTilt } from "phosphor-react";
 
-export const CartãoDeViagem = () => {
+export function CartãoDeViagem  () {
   return (
     <div className="min-h-screen w-full flex flex-col bg-[#8257E5] justify-center items-center ">
       <div className="flex flex-col gap-5 items-center justify-center w-[327px]">

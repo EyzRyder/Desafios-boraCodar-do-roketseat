@@ -4,7 +4,7 @@ import d3 from '../../assets/svg/d2/360.svg'
 import sofaG from '../../assets/img/d2/sofa.gif'
 import sofaP from '../../assets/img/d2/sofa.png'
 
-export const ProductCard = () => {
+export function ProductCard () {
   const [isOpen, setIsOpen] = useState(true)
 
   return (

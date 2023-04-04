@@ -4,7 +4,7 @@ import { Desafio4YourBubble } from "../../components/Desafio4YourBuble"
 import close from '../../assets/svg/d4/close.svg'
 import send from '../../assets/svg/d4/send.svg'
 
-export const Chat = () => {
+export function Chat () {
   return (
     <div className="bg-[#1A1924] text-white min-h-screen px-[72px] py-8 flex flex-col max-sm:py-6 max-sm:px-8">
       <header className="flex w-full h-12 justify-center items-center">

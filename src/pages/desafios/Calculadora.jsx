@@ -10,7 +10,7 @@ import plus from "../../assets/svg/d5/Plus.svg"
 import plusMinus from "../../assets/svg/d5/PlusMinus.svg"
 import times from "../../assets/svg/d5/X.svg"
 
-export const Calculadora = () => {
+export function Calculadora () {
     const [prev, setPrev] = useState("");
     const [calc, setCalc] = useState({
         sign: "",

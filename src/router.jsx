@@ -11,9 +11,12 @@ import { Chat } from "./pages/desafios/Chat";
 import { Clima } from "./pages/desafios/Clima";
 import { ConversorDeMoedas } from "./pages/desafios/ConversorDeMoedas";
 import { Dashboard } from "./pages/desafios/Dashboard";
+import { Login } from "./pages/desafios/Login";
 import { PlayerDeMusic } from "./pages/desafios/PlayerDeMusic";
 import { ProductCard } from "./pages/desafios/ProductCard";
 import { Home } from "./pages/Home";
+import { Kanban } from "phosphor-react";
+import { FormsCartao } from "./pages/desafios/FormsCartao";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,6 +33,9 @@ export const router = createBrowserRouter(
         <Route path="8" element={<Dashboard />} />
         <Route path="9" element={<ConversorDeMoedas />} />
         <Route path="10" element={<Clima />} />
+        <Route path="11" element={<Login />} />
+        <Route path="12" element={<Kanban />} />
+        <Route path="13" element={<FormsCartao />} />
 
       </Route>
 

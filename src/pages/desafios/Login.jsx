@@ -1,5 +1,6 @@
 import './Login.scss'
 import logo from '../../assets/svg/d11/Vector.svg'
+import waves from '../../assets/img/d11/Rectangle.png';
 import { EyeSlash } from 'phosphor-react'
 export function Login () {
   return (
@@ -18,8 +19,8 @@ export function Login () {
             <div className='flex flex-col gap-3'>
               <div className="item">
                 <label htmlFor="" className='flex font-semibold pb-2'>E-mail</label>
-                <div className=' border border-solid border-[#e2e8f0] rounded flex items-center py-4 px-3 bg-[#ffffff]'>
-                  <input className=' bg-transparent outline-transparent' type="text" placeholder='Digite seu e-mail' />
+                <div className='border border-solid border-[#e2e8f0] rounded flex items-center py-4 px-3 bg-[#ffffff] hover:border hover:border-[#7C3AED]'>
+                  <input className='bg-transparent outline-transparent ' type="text" placeholder='Digite seu e-mail' />
                 </div>
               </div>
               <div className="item">
@@ -27,8 +28,8 @@ export function Login () {
                   <span className='flex-1'>Senha</span>
                   <a href="" className='text-[#7C3AED]'>Esqueceu a senha?</a>
                 </label>
-                <div className=' border border-solid border-[#e2e8f0] rounded flex items-center py-4 px-3 bg-[#ffffff]'>
-                  <input className='bg-transparent   outline-transparent flex-1' type="text" placeholder='Digite sua senha' />
+                <div className=' border border-solid border-[#e2e8f0] rounded flex items-center py-4 px-3 bg-[#ffffff] hover:border hover:border-[#7C3AED]'>
+                  <input className='bg-transparent outline-transparent  flex-1' type="text" placeholder='Digite sua senha' />
                   <EyeSlash width={20} />
                 </div>
 
@@ -36,15 +37,14 @@ export function Login () {
             </div>
 
 
-            <button type='submit' className='w-full bg-[#7C3AED] py-4 px-6 rounded my-8 text-white'>Entrar</button>
+            <button type='submit' className='w-full bg-[#7C3AED] py-4 px-6 rounded my-8 text-white hover:bg-[#9F67FF]'>Entrar</button>
             <span>Ainda não tem uma conta?
-              <a href="" className='text-[#7C3AED] font-bold'>Inscreva-se</a>
+              <a href="" className='text-[#7C3AED] font-bold hover:underline '>Inscreva-se</a>
             </span>
           </from>
         </div>
       </div>
-      <div className='waveImage'>
-      </div>
+      <img src={waves} alt="" className='waveImage' />
     </div>
   )
 }

@@ -13,6 +13,19 @@
     width: 50%;
     object-fit: cover;
     background-repeat: no-repeat;
-    background: url(../../assets/img/d11/Rectangle.png);
+  }
+}
+
+@media screen and (max-width: 800px){
+
+  .loginContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .waveImage{
+      display: none;
+    }
   }
 }
